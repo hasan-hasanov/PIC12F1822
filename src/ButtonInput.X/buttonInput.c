@@ -13,13 +13,13 @@
 // Do not forget to connect a Pull Down resistor for the voltage in PIN.
 // In our example this is RA4
 //**********************************************************************************
-//								  	 PIC12F1822 Pinout for this example
-//								 	 ----------
+//                                   PIC12F1822 Pinout for this example
+//                                   ----------
 //          3.3V Power source -> Vdd |1      8| GND
-//							     RA5 |2      7| RA0
+//                               RA5 |2      7| RA0
 // Voltage in from the button -> RA4 |3      6| RA1
-//							     RA3 |4      5| RA2 -> voltage out for the LED
-//								     ----------
+//                               RA3 |4      5| RA2 -> voltage out for the LED
+//                                   ----------
 //**********************************************************************************
 #pragma config FOSC = ECH       // Oscillator Selection (ECH, External Clock, High Power Mode (4-32 MHz): device clock supplied to CLKIN pin)
 #pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
