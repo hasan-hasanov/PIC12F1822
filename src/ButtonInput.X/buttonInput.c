@@ -2,7 +2,7 @@
 // Example program showing how to read a button input on a PIC12F1822
 //
 // Device: PIC12F1822
-// Demo Board: PICkit 2 Low Pin Count Demo Board + AC244043 header board for debugging
+// Demo Board: PICkit 4
 // Compiler: Microchip XC8 v2.32
 // IDE: MPLAB X v5.45
 // Created: 09 March 2021
@@ -40,16 +40,16 @@
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 
-#include <xc.h> // include standard header file
+#include <xc.h> // Include standard header file
 
 // Definitions
-#define _XTAL_FREQ  16000000        // this is used by the __delay_ms(xx) and __delay_us(xx) functions
+#define _XTAL_FREQ  16000000        // This is used by the __delay_ms(xx) and __delay_us(xx) functions
 
 void main() {
-    // set up oscillator control register
+    // Set up oscillator control register
     OSCCONbits.SPLLEN = 0; // PLL is disabled
-    OSCCONbits.IRCF = 0x0F; //set OSCCON IRCF bits to select OSC frequency=16Mhz
-    OSCCONbits.SCS = 0x02; //set the SCS bits to select internal oscillator block
+    OSCCONbits.IRCF = 0x0F; // Set OSCCON IRCF bits to select OSC frequency=16Mhz
+    OSCCONbits.SCS = 0x02; // Set the SCS bits to select internal oscillator block
 
     ANSELAbits.ANSA0 = 0; // Set to digital
     ANSELAbits.ANSA1 = 0; // Set to digital
@@ -76,13 +76,13 @@ void main() {
     ADCON0 = 0; // ADC is off
 
     for (;;) {
-        __delay_ms(100); // wait 100 ms
+        __delay_ms(100); // Wait 100 ms
         if (PORTAbits.RA4 == 0) {
-            
+
             // Set LAT A2 bit to low
             LATAbits.LATA2 = 0;
         } else {
-            
+
             // Set LAT A2 bit to high
             LATAbits.LATA2 = 1;
         }
