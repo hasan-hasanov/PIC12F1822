@@ -14,25 +14,25 @@
 // Do not forget to connect a Pull Down resistor for the voltage in PIN.
 // In our example this is RA2 which is also the INT pin.
 // From the documentation:
-// 			The INT pin can be used to generate an asynchronous
-// 			edge-triggered interrupt. This interrupt is enabled by
-// 			setting the INTE bit of the INTCON register. The
-// 			INTEDG bit of the OPTION register determines on which
-// 			edge the interrupt will occur. When the INTEDG bit is
-// 			set, the rising edge will cause the interrupt. When the
-// 			INTEDG bit is clear, the falling edge will cause the
-// 			interrupt. The INTF bit of the INTCON register will be set
-// 			when a valid edge appears on the INT pin. If the GIE and
-// 			INTE bits are also set, the processor will redirect
-// 			program execution to the interrupt vector.
+//          The INT pin can be used to generate an asynchronous
+//          edge-triggered interrupt. This interrupt is enabled by
+//          setting the INTE bit of the INTCON register. The
+//          INTEDG bit of the OPTION register determines on which
+//          edge the interrupt will occur. When the INTEDG bit is
+//          set, the rising edge will cause the interrupt. When the
+//          INTEDG bit is clear, the falling edge will cause the
+//          interrupt. The INTF bit of the INTCON register will be set
+//          when a valid edge appears on the INT pin. If the GIE and
+//          INTE bits are also set, the processor will redirect
+//          program execution to the interrupt vector.
 //**********************************************************************************
-//								  	 PIC12F1822 Pinout for this example
-//								 	 ----------
+//                                   PIC12F1822 Pinout for this example
+//                                   ----------
 //          3.3V Power source -> Vdd |1      8| GND
-//							     RA5 |2      7| RA0
+//                               RA5 |2      7| RA0
 //                               RA4 |3      6| RA1 -> voltage out for the LED
-//							     RA3 |4      5| RA2 <- Voltage in from the button
-//								     ----------
+//                               RA3 |4      5| RA2 <- Voltage in from the button
+//                                   ----------
 //**********************************************************************************
 
 #include <xc.h>
@@ -58,7 +58,7 @@
 #include <xc.h> // Include standard header file
 
 // Definitions
-#define _XTAL_FREQ  16000000        // This is used by the __delay_ms(xx) and __delay_us(xx) functions
+#define _XTAL_FREQ  16000000 // This is used by the __delay_ms(xx) and __delay_us(xx) functions
 
 void __interrupt(high_priority) high_priority_interrupt(void) {
     INTCONbits.GIE = 0; // Disable global interrupts until processing
