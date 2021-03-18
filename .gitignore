@@ -55,3 +55,6 @@ dkms.conf
 /src/ButtonInput.X/dist/default/production
 /src/Interrupt.X/build/default
 /src/Interrupt.X/dist/default
+/src/UART.X/dist/default/production
+/src/UART.X/nbproject/private
+/src/UART.X/build/default/production
