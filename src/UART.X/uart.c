@@ -7,24 +7,11 @@
 // IDE: MPLAB X v5.45
 // Created: 09 March 2021
 //
-// This program shows how to handle interrupts.
-// The main idea of an interrupt is to break the program flow and execute another code instead.
-// For this example I use PICKIT 4 programmer.
-// The result is when a user press the button the PIC enters in interrupt state and toggles an LED.
-// Do not forget to connect a Pull Down resistor for the voltage in PIN.
-// In our example this is RA2 which is also the INT pin.
-// From the documentation:
-//          The INT pin can be used to generate an asynchronous
-//          edge-triggered interrupt. This interrupt is enabled by
-//          setting the INTE bit of the INTCON register. The
-//          INTEDG bit of the OPTION register determines on which
-//          edge the interrupt will occur. When the INTEDG bit is
-//          set, the rising edge will cause the interrupt. When the
-//          INTEDG bit is clear, the falling edge will cause the
-//          interrupt. The INTF bit of the INTCON register will be set
-//          when a valid edge appears on the INT pin. If the GIE and
-//          INTE bits are also set, the processor will redirect
-//          program execution to the interrupt vector.
+// This program shows how to implement UART protocol.
+// The main idea of UART is to send data via serial connection.
+// For this example I use PICKIT 4 programmer and CP2102 connector.
+// The idea is to send some data to my PC via serial port.
+// In order to receive the connection I use PuTTY.
 //**********************************************************************************
 //                                   PIC12F1822 Pinout for this example
 //                                   ----------
@@ -61,7 +48,6 @@
 
 // Definitions
 #define _XTAL_FREQ  1000000 // This is used by the __delay_ms(xx) and __delay_us(xx) functions
-uint8_t data = 'ABCD';
 
 void uart_init() {
     SPBRGH = 25 >> 8; // For 9600 Baud and with 11.0592 Mhz Crystal
@@ -89,19 +75,30 @@ void uart_init() {
     RCSTAbits.SPEN = 1; // ENABLE SERIAL PORT 
 }
 
+void uart_send(char* message) {
+    for (size_t i = 0; i < 12; i++) {
+        TXREG = message[i];
+        
+        // The heart of the EUSART is the serial
+        // Transmit Shift Register (TSR). The TSR obtains its data from
+        // the transmit buffer, which is the TXREG register
+        while (TXSTAbits.TRMT == 0); // Wait the register to clear out
+    }
+}
+
 int main(void) {
     // Set up oscillator control register
     OSCCONbits.SPLLEN = 0; // PLL is disabled
-    OSCCONbits.IRCF = 0b1011; // Set OSCCON IRCF bits to select OSC frequency=16Mhz
+    OSCCONbits.IRCF = 0b1011; // Set OSCCON IRCF bits to select OSC frequency=1Mhz
     OSCCONbits.SCS = 0x02; // Set the SCS bits to select internal oscillator block
 
     uart_init();
 
     for (;;) {
         __delay_ms(200);
-
-        TXREG = 'A';
-        while (TXSTAbits.TRMT == 0);
+        char message[] = {'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', ' '};
+        uart_send(&message);
     }
+
     return 0;
 }
