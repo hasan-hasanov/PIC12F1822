@@ -1,0 +1,194 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F1822 ]
+[d frameptr 6 ]
+"54 D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+[v _uart_init uart_init `(v  1 e 1 0 ]
+"91
+[v _main main `(i  1 e 2 0 ]
+"10 E:\Program Files\MPLabX\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 E:\Program Files\MPLabX\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 E:\Program Files\MPLabX\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"1242 E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S54 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1257
+[u S61 . 1 `S54 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES61  1 e 1 @140 ]
+[s S158 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 IRCF0 1 0 :1:3 
+`uc 1 IRCF1 1 0 :1:4 
+`uc 1 IRCF2 1 0 :1:5 
+`uc 1 IRCF3 1 0 :1:6 
+`uc 1 SPLLEN 1 0 :1:7 
+]
+"1667
+[s S167 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 IRCF 1 0 :4:3 
+]
+[u S171 . 1 `S158 1 . 1 0 `S167 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES171  1 e 1 @153 ]
+"1786
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"1806
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+[s S235 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"1855
+[s S243 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S247 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S250 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[u S253 . 1 `S235 1 . 1 0 `S243 1 . 1 0 `S247 1 . 1 0 `S250 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES253  1 e 1 @157 ]
+[s S277 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"1936
+[s S285 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS 1 0 :3:4 
+]
+[u S289 . 1 `S277 1 . 1 0 `S285 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES289  1 e 1 @158 ]
+[s S189 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 DACPSS0 1 0 :1:2 
+`uc 1 DACPSS1 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 DACOE 1 0 :1:5 
+`uc 1 DACLPS 1 0 :1:6 
+`uc 1 DACEN 1 0 :1:7 
+]
+"2280
+[s S197 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 DACPSS 1 0 :2:2 
+]
+[u S200 . 1 `S189 1 . 1 0 `S197 1 . 1 0 ]
+[v _DACCON0bits DACCON0bits `VES200  1 e 1 @280 ]
+[s S24 . 1 `uc 1 CCP1SEL 1 0 :1:0 
+`uc 1 P1BSEL 1 0 :1:1 
+`uc 1 TXCKSEL 1 0 :1:2 
+`uc 1 T1GSEL 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 SSSEL 1 0 :1:5 
+`uc 1 SDOSEL 1 0 :1:6 
+`uc 1 RXDTSEL 1 0 :1:7 
+]
+"2517
+[s S33 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS1SEL 1 0 :1:5 
+`uc 1 SDO1SEL 1 0 :1:6 
+]
+[u S37 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
+[v _APFCONbits APFCONbits `VES37  1 e 1 @285 ]
+"2632
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+[s S215 . 1 `uc 1 ANSA0 1 0 :1:0 
+`uc 1 ANSA1 1 0 :1:1 
+`uc 1 ANSA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ANSA4 1 0 :1:4 
+]
+"2649
+[s S221 . 1 `uc 1 ANSELA 1 0 :5:0 
+]
+[u S223 . 1 `S215 1 . 1 0 `S221 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES223  1 e 1 @396 ]
+"2893
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"2929
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"2979
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+[s S136 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3029
+[u S145 . 1 `S136 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES145  1 e 1 @413 ]
+[s S94 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3091
+[u S103 . 1 `S94 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES103  1 e 1 @414 ]
+[s S115 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"3153
+[u S124 . 1 `S115 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES124  1 e 1 @415 ]
+[s S72 . 1 `uc 1 WPUA0 1 0 :1:0 
+`uc 1 WPUA1 1 0 :1:1 
+`uc 1 WPUA2 1 0 :1:2 
+`uc 1 WPUA3 1 0 :1:3 
+`uc 1 WPUA4 1 0 :1:4 
+`uc 1 WPUA5 1 0 :1:5 
+]
+"3206
+[s S79 . 1 `uc 1 WPUA 1 0 :6:0 
+]
+[u S81 . 1 `S72 1 . 1 0 `S79 1 . 1 0 ]
+[v _WPUAbits WPUAbits `VES81  1 e 1 @524 ]
+"91 D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+[v _main main `(i  1 e 2 0 ]
+{
+"119
+[v main@ADCValue ADCValue `i  1 a 2 3 ]
+"132
+} 0
+"54
+[v _uart_init uart_init `(v  1 e 1 0 ]
+{
+"78
+} 0

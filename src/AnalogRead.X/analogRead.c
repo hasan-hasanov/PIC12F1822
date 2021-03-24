@@ -49,6 +49,8 @@
 // Definitions
 #define _XTAL_FREQ  1000000 // This is used by the __delay_ms(xx) and __delay_us(xx) functions
 
+uint8_t print_buffer[8] = {0};
+
 void uart_init() {
     SPBRGH = 25 >> 8; // For 9600 Baud and with 11.0592 Mhz Crystal
     SPBRGL = 25 & 0xFF;
@@ -78,7 +80,7 @@ void uart_init() {
 void uart_send(char* message) {
     for (size_t i = 0; i < 12; i++) {
         TXREG = message[i];
-        
+
         // The heart of the EUSART is the serial
         // Transmit Shift Register (TSR). The TSR obtains its data from
         // the transmit buffer, which is the TXREG register
@@ -92,12 +94,38 @@ int main(void) {
     OSCCONbits.IRCF = 0b1011; // Set OSCCON IRCF bits to select OSC frequency=1Mhz
     OSCCONbits.SCS = 0x02; // Set the SCS bits to select internal oscillator block
 
-    uart_init();
+    TRISA = 0x00;
+    TRISAbits.TRISA2 = 1; // RA4 = Analog voltage in
 
+    DACCON0bits.DACEN = 0; // turn DAC off
+
+    ANSELAbits.ANSA2 = 1; // Set to analog
+
+    ADCON0bits.CHS = 0b00010; // This selects which analog input to use for the ADC conversion
+    // for this example we are using A0 as our input
+
+    ADCON0bits.ADON = 1; // ADC is on
+    ADCON1bits.ADCS = 0x00; // select ADC conversion clock select as Fosc/8
+    ADCON1bits.ADFM = 0x01; // results are right justified
+
+
+
+    uart_init();
     for (;;) {
+
+        ADCON0bits.GO = 1; // start conversion
+        while (ADCON0bits.GO); // wait for conversion to finish
+
+        int ADCValue = ADRESH << 8; // get the 2 msbs of the result and rotate 8 bits to the left
+        ADCValue = ADCValue + ADRESL; // now add the low 8 bits of the resut into our return variable
+        TXREG = ADCValue;
+
         __delay_ms(200);
-        char message[] = {'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', ' '};
-        uart_send(&message);
+
+        // The heart of the EUSART is the serial
+        // Transmit Shift Register (TSR). The TSR obtains its data from
+        // the transmit buffer, which is the TXREG register
+        while (TXSTAbits.TRMT == 0); // Wait the register to clear out
     }
 
     return 0;
