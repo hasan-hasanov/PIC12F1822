@@ -17,7 +17,7 @@
 //**********************************************************************************
 //                                   PIC12F1822 Pinout for this example
 //                                   ----------
-//          5V Power source -> Vdd |1      8| GND
+//            5V Power source -> Vdd |1      8| GND
 //                               RA5 |2      7| RA0 -> TX
 //                               RA4 |3      6| RA1 -> RX
 //                               RA3 |4      5| RA2 <- Voltage in from analog sensor
