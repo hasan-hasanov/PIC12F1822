@@ -5,7 +5,11 @@
 [d frameptr 6 ]
 "54 D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
+"80
+[v _uart_send uart_send `(v  1 e 1 0 ]
 "91
+[v _Read_ADC_Value Read_ADC_Value `(ui  1 e 2 0 ]
+"101
 [v _main main `(i  1 e 2 0 ]
 "10 E:\Program Files\MPLabX\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -15,8 +19,6 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"1242 E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h
-[v _TRISA TRISA `VEuc  1 e 1 @140 ]
 [s S54 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
@@ -24,10 +26,10 @@
 `uc 1 TRISA4 1 0 :1:4 
 `uc 1 TRISA5 1 0 :1:5 
 ]
-"1257
+"1257 E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h
 [u S61 . 1 `S54 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES61  1 e 1 @140 ]
-[s S158 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S202 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF0 1 0 :1:3 
@@ -37,17 +39,17 @@
 `uc 1 SPLLEN 1 0 :1:7 
 ]
 "1667
-[s S167 . 1 `uc 1 SCS 1 0 :2:0 
+[s S211 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF 1 0 :4:3 
 ]
-[u S171 . 1 `S158 1 . 1 0 `S167 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES171  1 e 1 @153 ]
+[u S215 . 1 `S202 1 . 1 0 `S211 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES215  1 e 1 @153 ]
 "1786
 [v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
 "1806
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
-[s S235 . 1 `uc 1 ADON 1 0 :1:0 
+[s S158 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -56,19 +58,19 @@
 `uc 1 CHS4 1 0 :1:6 
 ]
 "1855
-[s S243 . 1 `uc 1 . 1 0 :1:0 
+[s S166 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-[s S247 . 1 `uc 1 . 1 0 :1:0 
+[s S170 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S250 . 1 `uc 1 . 1 0 :1:0 
+[s S173 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[u S253 . 1 `S235 1 . 1 0 `S243 1 . 1 0 `S247 1 . 1 0 `S250 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES253  1 e 1 @157 ]
-[s S277 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[u S176 . 1 `S158 1 . 1 0 `S166 1 . 1 0 `S170 1 . 1 0 `S173 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES176  1 e 1 @157 ]
+[s S252 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS0 1 0 :1:4 
@@ -77,26 +79,12 @@
 `uc 1 ADFM 1 0 :1:7 
 ]
 "1936
-[s S285 . 1 `uc 1 ADPREF 1 0 :2:0 
+[s S260 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS 1 0 :3:4 
 ]
-[u S289 . 1 `S277 1 . 1 0 `S285 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES289  1 e 1 @158 ]
-[s S189 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 DACPSS0 1 0 :1:2 
-`uc 1 DACPSS1 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 DACOE 1 0 :1:5 
-`uc 1 DACLPS 1 0 :1:6 
-`uc 1 DACEN 1 0 :1:7 
-]
-"2280
-[s S197 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 DACPSS 1 0 :2:2 
-]
-[u S200 . 1 `S189 1 . 1 0 `S197 1 . 1 0 ]
-[v _DACCON0bits DACCON0bits `VES200  1 e 1 @280 ]
+[u S264 . 1 `S252 1 . 1 0 `S260 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES264  1 e 1 @158 ]
 [s S24 . 1 `uc 1 CCP1SEL 1 0 :1:0 
 `uc 1 P1BSEL 1 0 :1:1 
 `uc 1 TXCKSEL 1 0 :1:2 
@@ -115,17 +103,17 @@
 [v _APFCONbits APFCONbits `VES37  1 e 1 @285 ]
 "2632
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
-[s S215 . 1 `uc 1 ANSA0 1 0 :1:0 
+[s S232 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 ANSA4 1 0 :1:4 
 ]
 "2649
-[s S221 . 1 `uc 1 ANSELA 1 0 :5:0 
+[s S238 . 1 `uc 1 ANSELA 1 0 :5:0 
 ]
-[u S223 . 1 `S215 1 . 1 0 `S221 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES223  1 e 1 @396 ]
+[u S240 . 1 `S232 1 . 1 0 `S238 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES240  1 e 1 @396 ]
 "2893
 [v _TXREG TXREG `VEuc  1 e 1 @410 ]
 "2929
@@ -180,15 +168,33 @@
 ]
 [u S81 . 1 `S72 1 . 1 0 `S79 1 . 1 0 ]
 [v _WPUAbits WPUAbits `VES81  1 e 1 @524 ]
-"91 D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+"101 D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
 [v _main main `(i  1 e 2 0 ]
 {
-"119
-[v main@ADCValue ADCValue `i  1 a 2 3 ]
-"132
+"102
+[v main@AnalogValue AnalogValue `ui  1 a 2 11 ]
+"131
+[v main@DAC_Value DAC_Value `i  1 a 2 9 ]
+"184
+} 0
+"80
+[v _uart_send uart_send `(v  1 e 1 0 ]
+{
+"81
+[v uart_send@i i `ui  1 a 2 2 ]
+"80
+[v uart_send@message message `*.25uc  1 p 2 0 ]
+"89
 } 0
 "54
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
 "78
+} 0
+"91
+[v _Read_ADC_Value Read_ADC_Value `(ui  1 e 2 0 ]
+{
+"92
+[v Read_ADC_Value@ADCValue ADCValue `ui  1 a 2 5 ]
+"99
 } 0

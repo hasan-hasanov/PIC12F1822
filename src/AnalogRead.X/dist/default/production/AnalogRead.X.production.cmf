@@ -11,16 +11,35 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
+$C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 1 1 1 2
 config CONFIG 4 8007 8007 2 2
 $dist/default/production\AnalogRead.X.production.o
-cinit CODE 0 7F6 7F6 A 2
-text1 CODE 0 78F 78F 1E 2
-maintext CODE 0 7AD 7AD 49 2
-cstackCOMMON COMMON 1 78 78 5 1
-bssCOMMON COMMON 1 70 70 8 1
+cinit CODE 0 7FE 7FE 2 2
+text1 CODE 0 539 539 1D 2
+text2 CODE 0 556 556 1E 2
+text3 CODE 0 574 574 20 2
+maintext CODE 0 594 594 26A 2
+cstackCOMMON COMMON 1 70 70 D 1
+stringtext1 STRCODE 0 535 535 4 2
+stringtext2 STRCODE 0 531 531 4 2
+stringtext3 STRCODE 0 52D 52D 4 2
+stringtext4 STRCODE 0 529 529 4 2
+stringtext5 STRCODE 0 525 525 4 2
+stringtext6 STRCODE 0 521 521 4 2
+stringtext7 STRCODE 0 51D 51D 4 2
+stringtext8 STRCODE 0 519 519 4 2
+stringtext9 STRCODE 0 515 515 4 2
+stringtext10 STRCODE 0 512 512 3 2
+stringtext11 STRCODE 0 50F 50F 3 2
+stringtext12 STRCODE 0 50C 50C 3 2
+stringtext13 STRCODE 0 509 509 3 2
+stringtext14 STRCODE 0 506 506 3 2
+stringtext15 STRCODE 0 503 503 3 2
+stringtext16 STRCODE 0 500 500 3 2
+stringtext17 STRCODE 0 4FD 4FD 3 2
+stringtext18 STRCODE 0 4FA 4FA 3 2
 config CONFIG 4 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,8 +51,8 @@ RAM 20-6F 1
 RAM A0-BF 1
 BANK0 20-6F 1
 BANK1 A0-BF 1
-CONST 2-78E 2
-ENTRY 2-78E 2
+CONST 2-4F9 2
+ENTRY 2-4F9 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -58,7 +77,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2000-206F 1
-CODE 2-78E 2
+CODE 2-4F9 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -72,8 +91,8 @@ SFR9 480-4EF 1
 BIGRAM 2000-206F 1
 COMMON 7D-7D 1
 EEDATA F000-F0FF 2
-STRCODE 2-78E 2
-STRING 2-78E 2
+STRCODE 2-4F9 2
+STRING 2-4F9 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -88,64 +107,183 @@ STRING 2-78E 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\AnalogRead.X.production.o
-7F6 cinit CODE >622:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7F6 cinit CODE >625:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7F6 cinit CODE >637:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7F7 cinit CODE >638:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7F8 cinit CODE >639:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7F9 cinit CODE >640:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FA cinit CODE >641:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FB cinit CODE >642:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FC cinit CODE >643:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FD cinit CODE >644:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FE cinit CODE >650:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FE cinit CODE >652:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-7FF cinit CODE >653:C:\Users\hasan\AppData\Local\Temp\xcAsj5c.s
-78F text1 CODE >54:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-78F text1 CODE >55:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-791 text1 CODE >56:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-793 text1 CODE >57:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-795 text1 CODE >58:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-796 text1 CODE >59:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-798 text1 CODE >60:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-799 text1 CODE >61:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-79B text1 CODE >62:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-79D text1 CODE >63:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-79E text1 CODE >64:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A0 text1 CODE >65:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A1 text1 CODE >66:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A2 text1 CODE >67:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A3 text1 CODE >68:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A4 text1 CODE >69:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A5 text1 CODE >70:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A6 text1 CODE >71:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A7 text1 CODE >73:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A8 text1 CODE >74:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7A9 text1 CODE >75:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7AA text1 CODE >76:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7AB text1 CODE >77:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7AC text1 CODE >78:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7AD maintext CODE >91:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7AD maintext CODE >93:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7AF maintext CODE >94:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7B3 maintext CODE >95:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7B7 maintext CODE >97:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7B8 maintext CODE >98:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7B9 maintext CODE >100:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7BB maintext CODE >102:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7BD maintext CODE >104:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7C2 maintext CODE >107:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7C3 maintext CODE >108:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7C5 maintext CODE >109:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7C6 maintext CODE >113:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7C9 maintext CODE >116:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7CB maintext CODE >117:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7CF maintext CODE >119:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7D9 maintext CODE >120:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7DD maintext CODE >120:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7E4 maintext CODE >121:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7E7 maintext CODE >123:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
-7EF maintext CODE >128:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7FE cinit CODE >778:C:\Users\hasan\AppData\Local\Temp\xcAsdt8.s
+7FE cinit CODE >781:C:\Users\hasan\AppData\Local\Temp\xcAsdt8.s
+7FE cinit CODE >787:C:\Users\hasan\AppData\Local\Temp\xcAsdt8.s
+7FE cinit CODE >789:C:\Users\hasan\AppData\Local\Temp\xcAsdt8.s
+7FF cinit CODE >790:C:\Users\hasan\AppData\Local\Temp\xcAsdt8.s
+574 text3 CODE >91:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+574 text3 CODE >94:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+576 text3 CODE >95:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+57A text3 CODE >96:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+584 text3 CODE >97:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+588 text3 CODE >97:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+58F text3 CODE >98:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+593 text3 CODE >99:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+556 text2 CODE >54:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+556 text2 CODE >55:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+558 text2 CODE >56:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+55A text2 CODE >57:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+55C text2 CODE >58:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+55D text2 CODE >59:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+55F text2 CODE >60:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+560 text2 CODE >61:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+562 text2 CODE >62:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+564 text2 CODE >63:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+565 text2 CODE >64:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+567 text2 CODE >65:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+568 text2 CODE >66:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+569 text2 CODE >67:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+56A text2 CODE >68:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+56B text2 CODE >69:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+56C text2 CODE >70:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+56D text2 CODE >71:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+56E text2 CODE >73:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+56F text2 CODE >74:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+570 text2 CODE >75:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+571 text2 CODE >76:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+572 text2 CODE >77:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+573 text2 CODE >78:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+539 text1 CODE >80:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+539 text1 CODE >81:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+53B text1 CODE >82:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+544 text1 CODE >87:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+548 text1 CODE >88:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+54F text1 CODE >88:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+551 text1 CODE >88:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+555 text1 CODE >89:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+594 maintext CODE >101:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+594 maintext CODE >104:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+597 maintext CODE >107:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+599 maintext CODE >108:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+59D maintext CODE >109:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A1 maintext CODE >111:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A2 maintext CODE >112:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A3 maintext CODE >113:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A4 maintext CODE >114:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A5 maintext CODE >115:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A6 maintext CODE >116:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A7 maintext CODE >119:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5A9 maintext CODE >123:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5AE maintext CODE >126:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5B2 maintext CODE >127:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5B3 maintext CODE >129:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5B4 maintext CODE >133:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5BB maintext CODE >134:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5CA maintext CODE >136:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5CD maintext CODE >136:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5CF maintext CODE >136:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5D6 maintext CODE >136:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5D8 maintext CODE >136:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5DC maintext CODE >137:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5E3 maintext CODE >138:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5E7 maintext CODE >138:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5E9 maintext CODE >138:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5F0 maintext CODE >138:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5F2 maintext CODE >138:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5F6 maintext CODE >139:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+5FD maintext CODE >140:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+601 maintext CODE >140:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+603 maintext CODE >140:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+60A maintext CODE >140:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+60C maintext CODE >140:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+610 maintext CODE >141:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+617 maintext CODE >142:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+61B maintext CODE >142:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+61D maintext CODE >142:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+624 maintext CODE >142:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+626 maintext CODE >142:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+62A maintext CODE >143:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+631 maintext CODE >144:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+635 maintext CODE >144:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+637 maintext CODE >144:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+63E maintext CODE >144:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+640 maintext CODE >144:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+644 maintext CODE >145:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+64B maintext CODE >146:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+64F maintext CODE >146:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+651 maintext CODE >146:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+658 maintext CODE >146:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+65A maintext CODE >146:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+65E maintext CODE >147:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+665 maintext CODE >148:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+669 maintext CODE >148:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+66B maintext CODE >148:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+672 maintext CODE >148:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+674 maintext CODE >148:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+678 maintext CODE >149:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+67F maintext CODE >150:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+683 maintext CODE >150:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+685 maintext CODE >150:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+68C maintext CODE >150:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+68E maintext CODE >150:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+692 maintext CODE >151:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+699 maintext CODE >152:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+69D maintext CODE >152:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+69F maintext CODE >152:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6A6 maintext CODE >152:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6A8 maintext CODE >152:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6AC maintext CODE >153:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6B3 maintext CODE >154:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6B4 maintext CODE >155:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6BB maintext CODE >158:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6C0 maintext CODE >158:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6C4 maintext CODE >158:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6CD maintext CODE >158:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6D1 maintext CODE >158:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6D5 maintext CODE >159:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6DC maintext CODE >160:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6E2 maintext CODE >160:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6E6 maintext CODE >160:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6EF maintext CODE >160:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6F3 maintext CODE >160:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6F7 maintext CODE >161:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+6FE maintext CODE >162:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+704 maintext CODE >162:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+708 maintext CODE >162:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+711 maintext CODE >162:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+715 maintext CODE >162:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+719 maintext CODE >163:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+720 maintext CODE >164:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+726 maintext CODE >164:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+72A maintext CODE >164:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+733 maintext CODE >164:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+737 maintext CODE >164:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+73B maintext CODE >165:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+742 maintext CODE >166:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+748 maintext CODE >166:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+74C maintext CODE >166:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+755 maintext CODE >166:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+759 maintext CODE >166:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+75D maintext CODE >167:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+764 maintext CODE >168:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+76A maintext CODE >168:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+76E maintext CODE >168:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+777 maintext CODE >168:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+77B maintext CODE >168:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+77F maintext CODE >169:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+786 maintext CODE >170:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+78C maintext CODE >170:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+790 maintext CODE >170:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+799 maintext CODE >170:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+79D maintext CODE >170:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7A1 maintext CODE >171:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7A8 maintext CODE >172:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7AE maintext CODE >172:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7B2 maintext CODE >172:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7BB maintext CODE >172:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7BF maintext CODE >172:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7C3 maintext CODE >173:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7CA maintext CODE >174:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7D0 maintext CODE >174:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7D4 maintext CODE >174:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7DD maintext CODE >174:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7E1 maintext CODE >174:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7E5 maintext CODE >175:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7EC maintext CODE >176:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7ED maintext CODE >177:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7F4 maintext CODE >180:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
+7FC maintext CODE >181:D:\Projects\PIC12F1822\src\AnalogRead.X\analogRead.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -166,20 +304,30 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-_main F5A 0 CODE 0 maintext dist/default/production\AnalogRead.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+_main B28 0 CODE 0 maintext dist/default/production\AnalogRead.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
-start 2 0 CODE 0 init C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
+start 2 0 CODE 0 init C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
 __size_of_main 0 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__Hstringtext10 0 0 ABS 0 stringtext10 -
+__Hstringtext11 0 0 ABS 0 stringtext11 -
+__Hstringtext12 0 0 ABS 0 stringtext12 -
+__Hstringtext13 0 0 ABS 0 stringtext13 -
+__Hstringtext14 0 0 ABS 0 stringtext14 -
+__Hstringtext15 0 0 ABS 0 stringtext15 -
+__Hstringtext16 0 0 ABS 0 stringtext16 -
+__Hstringtext17 0 0 ABS 0 stringtext17 -
+__Hstringtext18 0 0 ABS 0 stringtext18 -
+__Hstringtext19 0 0 ABS 0 stringtext19 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_Read_ADC_Value B28 0 CODE 0 text3 dist/default/production\AnalogRead.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+?_Read_ADC_Value 70 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
 _OSCCONbits 99 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -187,18 +335,29 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ADRESH 9C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 _ADRESL 9B 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 _ANSELA 18C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
+main@AnalogValue 7B 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _BAUDCONbits 19F 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
-___stackhi 206F 0 ABS 0 - C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
-___stacklo 2000 0 ABS 0 - C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
+Read_ADC_Value@ADCValue 75 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
+___stackhi 206F 0 ABS 0 - C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+___stacklo 2000 0 ABS 0 - C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+__Lstringtext10 0 0 ABS 0 stringtext10 -
+__Lstringtext11 0 0 ABS 0 stringtext11 -
+__Lstringtext12 0 0 ABS 0 stringtext12 -
+__Lstringtext13 0 0 ABS 0 stringtext13 -
+__Lstringtext14 0 0 ABS 0 stringtext14 -
+__Lstringtext15 0 0 ABS 0 stringtext15 -
+__Lstringtext16 0 0 ABS 0 stringtext16 -
+__Lstringtext17 0 0 ABS 0 stringtext17 -
+__Lstringtext18 0 0 ABS 0 stringtext18 -
+__Lstringtext19 0 0 ABS 0 stringtext19 -
 _WPUAbits 20C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
-start_initialization FEC 0 CODE 0 cinit dist/default/production\AnalogRead.X.production.o
+start_initialization FFC 0 CODE 0 cinit dist/default/production\AnalogRead.X.production.o
 _APFCONbits 11D 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 _TRISAbits 8C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
-main@ADCValue 7B 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
+___int_sp 0 0 STACK 2 stack C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -269,7 +428,7 @@ __Lbank6 0 0 BANK6 1 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit FEC 0 CODE 0 cinit -
+__Lcinit FFC 0 CODE 0 cinit -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -321,13 +480,42 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
+__pstringtext1 A6A 0 STRCODE 0 stringtext1 dist/default/production\AnalogRead.X.production.o
+__pstringtext2 A62 0 STRCODE 0 stringtext2 dist/default/production\AnalogRead.X.production.o
+__pstringtext3 A5A 0 STRCODE 0 stringtext3 dist/default/production\AnalogRead.X.production.o
+__pstringtext4 A52 0 STRCODE 0 stringtext4 dist/default/production\AnalogRead.X.production.o
+__pstringtext5 A4A 0 STRCODE 0 stringtext5 dist/default/production\AnalogRead.X.production.o
+__pstringtext6 A42 0 STRCODE 0 stringtext6 dist/default/production\AnalogRead.X.production.o
+__pstringtext7 A3A 0 STRCODE 0 stringtext7 dist/default/production\AnalogRead.X.production.o
+__pstringtext8 A32 0 STRCODE 0 stringtext8 dist/default/production\AnalogRead.X.production.o
+__pstringtext9 A2A 0 STRCODE 0 stringtext9 dist/default/production\AnalogRead.X.production.o
+__pstringtext10 A24 0 STRCODE 0 stringtext10 dist/default/production\AnalogRead.X.production.o
+__pstringtext11 A1E 0 STRCODE 0 stringtext11 dist/default/production\AnalogRead.X.production.o
+__pstringtext12 A18 0 STRCODE 0 stringtext12 dist/default/production\AnalogRead.X.production.o
+__pstringtext13 A12 0 STRCODE 0 stringtext13 dist/default/production\AnalogRead.X.production.o
+__pstringtext14 A0C 0 STRCODE 0 stringtext14 dist/default/production\AnalogRead.X.production.o
+__pstringtext15 A06 0 STRCODE 0 stringtext15 dist/default/production\AnalogRead.X.production.o
+__pstringtext16 A00 0 STRCODE 0 stringtext16 dist/default/production\AnalogRead.X.production.o
+__pstringtext17 9FA 0 STRCODE 0 stringtext17 dist/default/production\AnalogRead.X.production.o
+__pstringtext18 9F4 0 STRCODE 0 stringtext18 dist/default/production\AnalogRead.X.production.o
+__pstringtext19 0 0 STRCODE 0 stringtext19 dist/default/production\AnalogRead.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800 0 ABS 0 - -
 __S1 7D 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+__size_of_Read_ADC_Value 0 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 __Lintentry 2 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\hasan\AppData\Local\Temp\xcAsj5c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\hasan\AppData\Local\Temp\xcAsdt8.o
+__Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lstringtext2 0 0 ABS 0 stringtext2 -
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+__Lstringtext4 0 0 ABS 0 stringtext4 -
+__Lstringtext5 0 0 ABS 0 stringtext5 -
+__Lstringtext6 0 0 ABS 0 stringtext6 -
+__Lstringtext7 0 0 ABS 0 stringtext7 -
+__Lstringtext8 0 0 ABS 0 stringtext8 -
+__Lstringtext9 0 0 ABS 0 stringtext9 -
 _RCSTAbits 19D 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
@@ -351,7 +539,7 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext F5A 0 CODE 0 maintext dist/default/production\AnalogRead.X.production.o
+__pmaintext B28 0 CODE 0 maintext dist/default/production\AnalogRead.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
@@ -362,34 +550,49 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\AnalogRead.X.production.o
+main@DAC_Value 79 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
 __Lend_init 2 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FFC 0 CODE 0 cinit dist/default/production\AnalogRead.X.production.o
 __Hintentry 2 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
-_DACCON0bits 118 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
-__end_of_uart_init F5A 0 CODE 0 text1 dist/default/production\AnalogRead.X.production.o
-__ptext1 F1E 0 CODE 0 text1 dist/default/production\AnalogRead.X.production.o
+__end_of_uart_init AE8 0 CODE 0 text2 dist/default/production\AnalogRead.X.production.o
+__end_of_uart_send AAC 0 CODE 0 text1 dist/default/production\AnalogRead.X.production.o
+__ptext1 A72 0 CODE 0 text1 dist/default/production\AnalogRead.X.production.o
+__ptext2 AAC 0 CODE 0 text2 dist/default/production\AnalogRead.X.production.o
+__ptext3 AE8 0 CODE 0 text3 dist/default/production\AnalogRead.X.production.o
 __size_of_uart_init 0 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
+__size_of_uart_send 0 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_uart_init F1E 0 CODE 0 text1 dist/default/production\AnalogRead.X.production.o
+__Hstringtext1 0 0 ABS 0 stringtext1 -
+__Hstringtext2 0 0 ABS 0 stringtext2 -
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+__Hstringtext4 0 0 ABS 0 stringtext4 -
+__Hstringtext5 0 0 ABS 0 stringtext5 -
+__Hstringtext6 0 0 ABS 0 stringtext6 -
+__Hstringtext7 0 0 ABS 0 stringtext7 -
+__Hstringtext8 0 0 ABS 0 stringtext8 -
+__Hstringtext9 0 0 ABS 0 stringtext9 -
+_uart_init AAC 0 CODE 0 text2 dist/default/production\AnalogRead.X.production.o
+_uart_send A72 0 CODE 0 text1 dist/default/production\AnalogRead.X.production.o
 __end_of__initialization FFC 0 CODE 0 cinit dist/default/production\AnalogRead.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+uart_send@message 70 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 78 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
 _TXSTAbits 19E 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 __Hend_init 4 0 CODE 0 end_init -
-__end_of_main FEC 0 CODE 0 maintext dist/default/production\AnalogRead.X.production.o
-_TRISA 8C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
+__end_of_main FFC 0 CODE 0 maintext dist/default/production\AnalogRead.X.production.o
 _TXREG 19A 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization FEC 0 CODE 0 cinit dist/default/production\AnalogRead.X.production.o
+__initialization FFC 0 CODE 0 cinit dist/default/production\AnalogRead.X.production.o
+uart_send@i 72 0 COMMON 1 cstackCOMMON dist/default/production\AnalogRead.X.production.o
 _ANSELAbits 18C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
+_Read_ADC_Value AE8 0 CODE 0 text3 dist/default/production\AnalogRead.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -415,11 +618,31 @@ _ANSELAbits 18C 0 ABS 0 - dist/default/production\AnalogRead.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7F6 FEC A 2
-text1 0 78F F1E 1E 2
-maintext 0 7AD F5A 49 2
+cinit 0 7FE FFC 2 2
+text1 0 539 A72 1D 2
+text2 0 556 AAC 1E 2
+text3 0 574 AE8 20 2
+maintext 0 594 B28 26A 2
+cstackCOMMON 1 70 70 D 1
+stringtext1 0 535 A6A 4 2
+stringtext2 0 531 A62 4 2
+stringtext3 0 52D A5A 4 2
+stringtext4 0 529 A52 4 2
+stringtext5 0 525 A4A 4 2
+stringtext6 0 521 A42 4 2
+stringtext7 0 51D A3A 4 2
+stringtext8 0 519 A32 4 2
+stringtext9 0 515 A2A 4 2
 reset_vec 0 0 0 2 2
-bssCOMMON 1 70 70 D 1
+stringtext10 0 512 A24 3 2
+stringtext11 0 50F A1E 3 2
+stringtext12 0 50C A18 3 2
+stringtext13 0 509 A12 3 2
+stringtext14 0 506 A0C 3 2
+stringtext15 0 503 A06 3 2
+stringtext16 0 500 A00 3 2
+stringtext17 0 4FD 9FA 3 2
+stringtext18 0 4FA 9F4 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

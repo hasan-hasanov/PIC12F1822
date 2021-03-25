@@ -23,6 +23,8 @@
 //**********************************************************************************
 
 #include <xc.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #pragma config FOSC = INTOSC    // Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
 #pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
@@ -43,13 +45,11 @@
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 #include <xc.h> // Include standard header file
-#include <stdbool.h>
-#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 // Definitions
 #define _XTAL_FREQ  1000000 // This is used by the __delay_ms(xx) and __delay_us(xx) functions
-
-uint8_t print_buffer[8] = {0};
 
 void uart_init() {
     SPBRGH = 25 >> 8; // For 9600 Baud and with 11.0592 Mhz Crystal
@@ -78,7 +78,7 @@ void uart_init() {
 }
 
 void uart_send(char* message) {
-    for (size_t i = 0; i < 12; i++) {
+    for (size_t i = 0; i < sizeof message / sizeof message[0]; i++) {
         TXREG = message[i];
 
         // The heart of the EUSART is the serial
@@ -88,44 +88,96 @@ void uart_send(char* message) {
     }
 }
 
+unsigned int Read_ADC_Value(void) {
+    unsigned int ADCValue;
+
+    ADCON0bits.GO = 1; // start conversion
+    while (ADCON0bits.GO); // wait for conversion to finish
+    ADCValue = ADRESH << 8; // get the 2 msbs of the result and rotate 8 bits to the left
+    ADCValue = ADCValue + ADRESL; // now add the low 8 bits of the resut into our return variable
+    return (ADCValue); // return the 10bit result in a single variable
+}
+
 int main(void) {
+    unsigned int AnalogValue; // used to store ADC result after capture
+
+    uart_init();
+
     // Set up oscillator control register
     OSCCONbits.SPLLEN = 0; // PLL is disabled
     OSCCONbits.IRCF = 0b1011; // Set OSCCON IRCF bits to select OSC frequency=1Mhz
     OSCCONbits.SCS = 0x02; // Set the SCS bits to select internal oscillator block
 
-    TRISA = 0x00;
-    TRISAbits.TRISA2 = 1; // RA4 = Analog voltage in
+    TRISAbits.TRISA0 = 0; // RA0 = DAC voltage output
+    TRISAbits.TRISA1 = 0; // RA1 = Analog Voltage In
+    TRISAbits.TRISA2 = 1; // RA2 = PWM Output (CCP1) connected to LED
+    TRISAbits.TRISA3 = 0; // RA3 = nc (MCLR)
+    TRISAbits.TRISA4 = 0; // RA4 = nc
+    TRISAbits.TRISA5 = 0; // RA5 = nc
 
-    DACCON0bits.DACEN = 0; // turn DAC off
-
-    ANSELAbits.ANSA2 = 1; // Set to analog
+    // Set up ADC
+    ANSELAbits.ANSA2 = 1; // Select A1 as analog input pin for potentiometer input
+    // You will need to set the ANSA bits for each pin you want
+    // to use as analog inputs
 
     ADCON0bits.CHS = 0b00010; // This selects which analog input to use for the ADC conversion
-    // for this example we are using A0 as our input
+    // for this example we are using A1 as our input
 
-    ADCON0bits.ADON = 1; // ADC is on
-    ADCON1bits.ADCS = 0x00; // select ADC conversion clock select as Fosc/8
+    ADCON1bits.ADCS = 0x01; // select ADC conversion clock select as Fosc/8
     ADCON1bits.ADFM = 0x01; // results are right justified
 
+    ADCON0bits.ADON = 1; // ADC is on
 
-
-    uart_init();
+    int DAC_Value; // this will be used to set the DAC output register
     for (;;) {
+        AnalogValue = Read_ADC_Value(); // Read the analog voltage on pin RA1
+        DAC_Value = (AnalogValue >> 5) & 0x1F; // divide ADC value by 32 and mask off lower 5 bits
 
-        ADCON0bits.GO = 1; // start conversion
-        while (ADCON0bits.GO); // wait for conversion to finish
+        if (AnalogValue > 10 && AnalogValue <= 20) {
+            uart_send("A ");
+        } else if (AnalogValue > 20 && AnalogValue <= 30) {
+            uart_send("B ");
+        } else if (AnalogValue > 30 && AnalogValue <= 40) {
+            uart_send("C ");
+        } else if (AnalogValue > 40 && AnalogValue <= 50) {
+            uart_send("D ");
+        } else if (AnalogValue > 50 && AnalogValue <= 60) {
+            uart_send("E ");
+        } else if (AnalogValue > 60 && AnalogValue <= 70) {
+            uart_send("F ");
+        } else if (AnalogValue > 70 && AnalogValue <= 80) {
+            uart_send("G ");
+        } else if (AnalogValue > 80 && AnalogValue <= 90) {
+            uart_send("H ");
+        } else if (AnalogValue > 90 && AnalogValue <= 100) {
+            uart_send("G ");
+        } else {
+            uart_send("Z ");
+        }
 
-        int ADCValue = ADRESH << 8; // get the 2 msbs of the result and rotate 8 bits to the left
-        ADCValue = ADCValue + ADRESL; // now add the low 8 bits of the resut into our return variable
-        TXREG = ADCValue;
+        if (DAC_Value > 10 && DAC_Value <= 20) {
+            uart_send("A1 ");
+        } else if (DAC_Value > 20 && DAC_Value <= 30) {
+            uart_send("B1 ");
+        } else if (DAC_Value > 30 && DAC_Value <= 40) {
+            uart_send("C1 ");
+        } else if (DAC_Value > 40 && DAC_Value <= 50) {
+            uart_send("D1 ");
+        } else if (DAC_Value > 50 && DAC_Value <= 60) {
+            uart_send("E1 ");
+        } else if (DAC_Value > 60 && DAC_Value <= 70) {
+            uart_send("F1 ");
+        } else if (DAC_Value > 70 && DAC_Value <= 80) {
+            uart_send("G1 ");
+        } else if (DAC_Value > 80 && DAC_Value <= 90) {
+            uart_send("H1 ");
+        } else if (DAC_Value > 90 && DAC_Value <= 100) {
+            uart_send("G1 ");
+        } else {
+            uart_send("Z1 ");
+        }
 
-        __delay_ms(200);
-
-        // The heart of the EUSART is the serial
-        // Transmit Shift Register (TSR). The TSR obtains its data from
-        // the transmit buffer, which is the TXREG register
-        while (TXSTAbits.TRMT == 0); // Wait the register to clear out
+        __delay_ms(100); // wait a little bit
     }
 
     return 0;

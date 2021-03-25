@@ -85,55 +85,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2893
 [; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2893: extern volatile unsigned char TXREG __attribute__((address(0x19A)));
 [v _TXREG `Vuc ~T0 @X0 0 e@410 ]
-[p mainexit ]
-"1651
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1651:     struct {
-[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S91 . SCS0 SCS1 . IRCF0 IRCF1 IRCF2 IRCF3 SPLLEN ]
-"1661
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1661:     struct {
-[s S92 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S92 . SCS . IRCF ]
-"1650
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1650: typedef union {
-[u S90 `S91 1 `S92 1 ]
-[n S90 . . . ]
-"1667
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1667: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x099)));
-[v _OSCCONbits `VS90 ~T0 @X0 0 e@153 ]
-"1242
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1242: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
-[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
-"2266
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2266:     struct {
-[s S122 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S122 . . DACPSS0 DACPSS1 . DACOE DACLPS DACEN ]
-"2275
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2275:     struct {
-[s S123 :2 `uc 1 :2 `uc 1 ]
-[n S123 . . DACPSS ]
-"2265
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2265: typedef union {
-[u S121 `S122 1 `S123 1 ]
-[n S121 . . . ]
-"2280
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2280: extern volatile DACCON0bits_t DACCON0bits __attribute__((address(0x118)));
-[v _DACCON0bits `VS121 ~T0 @X0 0 e@280 ]
-"2638
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2638:     struct {
-[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S139 . ANSA0 ANSA1 ANSA2 . ANSA4 ]
-"2645
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2645:     struct {
-[s S140 :5 `uc 1 ]
-[n S140 . ANSELA ]
-"2637
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2637: typedef union {
-[u S138 `S139 1 `S140 1 ]
-[n S138 . . . ]
-"2649
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2649: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0x18C)));
-[v _ANSELAbits `VS138 ~T0 @X0 0 e@396 ]
 "1832
 [; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1832:     struct {
 [s S100 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -157,6 +108,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1855
 [; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1855: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x09D)));
 [v _ADCON0bits `VS99 ~T0 @X0 0 e@157 ]
+"1806
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1806: extern volatile unsigned char ADRESH __attribute__((address(0x09C)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
+"1786
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1786: extern volatile unsigned char ADRESL __attribute__((address(0x09B)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
+[p mainexit ]
+"1651
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1651:     struct {
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . SCS0 SCS1 . IRCF0 IRCF1 IRCF2 IRCF3 SPLLEN ]
+"1661
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1661:     struct {
+[s S92 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S92 . SCS . IRCF ]
+"1650
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1650: typedef union {
+[u S90 `S91 1 `S92 1 ]
+[n S90 . . . ]
+"1667
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1667: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x099)));
+[v _OSCCONbits `VS90 ~T0 @X0 0 e@153 ]
+"2638
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2638:     struct {
+[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S139 . ANSA0 ANSA1 ANSA2 . ANSA4 ]
+"2645
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2645:     struct {
+[s S140 :5 `uc 1 ]
+[n S140 . ANSELA ]
+"2637
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2637: typedef union {
+[u S138 `S139 1 `S140 1 ]
+[n S138 . . . ]
+"2649
+[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 2649: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0x18C)));
+[v _ANSELAbits `VS138 ~T0 @X0 0 e@396 ]
 "1921
 [; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1921:     struct {
 [s S105 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -172,12 +160,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1936
 [; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1936: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09E)));
 [v _ADCON1bits `VS104 ~T0 @X0 0 e@158 ]
-"1806
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1806: extern volatile unsigned char ADRESH __attribute__((address(0x09C)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
-"1786
-[; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 1786: extern volatile unsigned char ADRESL __attribute__((address(0x09B)));
-[v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
 [v F1923 `(v ~T0 @X0 1 tf1`ul ]
 "92 E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h
 [v __delay `JF1923 ~T0 @X0 0 e ]
@@ -530,246 +512,472 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5033
 [; ;E:/Program Files/MPLabX/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic12f1822.h: 5033: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"27 analogRead.c
+"29 analogRead.c
+[; ;analogRead.c: 29:     RCSTAbits.OERR = 0;
 [p x FOSC  =  INTOSC     ]
-"28
-[p x WDTE  =  OFF        ]
-"29
-[p x PWRTE  =  OFF       ]
 "30
-[p x MCLRE  =  OFF        ]
+[; ;analogRead.c: 30:     RCSTAbits.SPEN = 1;
+[p x WDTE  =  OFF        ]
 "31
-[p x CP  =  OFF          ]
+[; ;analogRead.c: 31: }
+[p x PWRTE  =  OFF       ]
 "32
-[p x CPD  =  OFF         ]
+[; ;analogRead.c: 32: 
+[p x MCLRE  =  OFF        ]
 "33
-[p x BOREN  =  OFF        ]
+[; ;analogRead.c: 33: void uart_send(char* message) {
+[p x CP  =  OFF          ]
 "34
-[p x CLKOUTEN  =  OFF    ]
+[; ;analogRead.c: 34:     for (size_t i = 0; i < sizeof message / sizeof message[0]; i++) {
+[p x CPD  =  OFF         ]
 "35
-[p x IESO  =  OFF         ]
+[; ;analogRead.c: 35:         TXREG = message[i];
+[p x BOREN  =  OFF        ]
 "36
+[; ;analogRead.c: 36: 
+[p x CLKOUTEN  =  OFF    ]
+"37
+[; ;analogRead.c: 37: 
+[p x IESO  =  OFF         ]
+"38
+[; ;analogRead.c: 38: 
 [p x FCMEN  =  OFF        ]
-"39
-[p x WRT  =  OFF         ]
-"40
-[p x PLLEN  =  OFF        ]
 "41
-[p x STVREN  =  ON       ]
+[; ;analogRead.c: 41:     }
+[p x WRT  =  OFF         ]
 "42
-[p x BORV  =  LO         ]
+[; ;analogRead.c: 42: }
+[p x PLLEN  =  OFF        ]
 "43
+[; ;analogRead.c: 43: 
+[p x STVREN  =  ON       ]
+"44
+[; ;analogRead.c: 44: unsigned int Read_ADC_Value(void) {
+[p x BORV  =  LO         ]
+"45
+[; ;analogRead.c: 45:     unsigned int ADCValue;
 [p x LVP  =  ON          ]
-"52
-[; ;analogRead.c: 52: uint8_t print_buffer[8] = {0};
-[v _print_buffer `uc ~T0 @X0 -> 8 `i e ]
-[i _print_buffer
-:U ..
--> -> 0 `i `uc
-..
-]
 "54
-[; ;analogRead.c: 54: void uart_init() {
+[; ;analogRead.c: 54: int main(void) {
 [v _uart_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _uart_init ]
 [f ]
 "55
-[; ;analogRead.c: 55:     SPBRGH = 25 >> 8;
+[; ;analogRead.c: 55:     unsigned int AnalogValue;
 [e = _SPBRGH -> >> -> 25 `i -> 8 `i `uc ]
 "56
-[; ;analogRead.c: 56:     SPBRGL = 25 & 0xFF;
+[; ;analogRead.c: 56: 
 [e = _SPBRGL -> & -> 25 `i -> 255 `i `uc ]
 "57
-[; ;analogRead.c: 57:     APFCONbits.RXDTSEL = 0;
+[; ;analogRead.c: 57:     uart_init();
 [e = . . _APFCONbits 0 7 -> -> 0 `i `uc ]
 "58
-[; ;analogRead.c: 58:     APFCONbits.TXCKSEL = 0;
+[; ;analogRead.c: 58: 
 [e = . . _APFCONbits 0 2 -> -> 0 `i `uc ]
 "59
-[; ;analogRead.c: 59:     TRISAbits.TRISA0 = 0;
+[; ;analogRead.c: 59: 
 [e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
 "60
-[; ;analogRead.c: 60:     TRISAbits.TRISA1 = 1;
+[; ;analogRead.c: 60:     OSCCONbits.SPLLEN = 0;
 [e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
 "61
-[; ;analogRead.c: 61:     ANSELA = 0;
+[; ;analogRead.c: 61:     OSCCONbits.IRCF = 0b1011;
 [e = _ANSELA -> -> 0 `i `uc ]
 "62
-[; ;analogRead.c: 62:     WPUAbits.WPUA0 = 1;
+[; ;analogRead.c: 62:     OSCCONbits.SCS = 0x02;
 [e = . . _WPUAbits 0 0 -> -> 1 `i `uc ]
 "63
-[; ;analogRead.c: 63:     WPUAbits.WPUA1 = 1;
+[; ;analogRead.c: 63: 
 [e = . . _WPUAbits 0 1 -> -> 1 `i `uc ]
 "64
-[; ;analogRead.c: 64:     TXSTAbits.TX9 = 0;
+[; ;analogRead.c: 64:     TRISAbits.TRISA0 = 0;
 [e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
 "65
-[; ;analogRead.c: 65:     TXSTAbits.TXEN = 1;
+[; ;analogRead.c: 65:     TRISAbits.TRISA1 = 0;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
 "66
-[; ;analogRead.c: 66:     TXSTAbits.SYNC = 0;
+[; ;analogRead.c: 66:     TRISAbits.TRISA2 = 1;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
 "67
-[; ;analogRead.c: 67:     TXSTAbits.SENDB = 0;
+[; ;analogRead.c: 67:     TRISAbits.TRISA3 = 0;
 [e = . . _TXSTAbits 0 3 -> -> 0 `i `uc ]
 "68
-[; ;analogRead.c: 68:     TXSTAbits.BRGH = 1;
+[; ;analogRead.c: 68:     TRISAbits.TRISA4 = 0;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "69
-[; ;analogRead.c: 69:     BAUDCONbits.SCKP = 0;
+[; ;analogRead.c: 69:     TRISAbits.TRISA5 = 0;
 [e = . . _BAUDCONbits 0 4 -> -> 0 `i `uc ]
 "70
-[; ;analogRead.c: 70:     BAUDCONbits.BRG16 = 1;
+[; ;analogRead.c: 70: 
 [e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
 "71
-[; ;analogRead.c: 71:     BAUDCONbits.ABDEN = 0;
+[; ;analogRead.c: 71: 
 [e = . . _BAUDCONbits 0 0 -> -> 0 `i `uc ]
 "73
-[; ;analogRead.c: 73:     RCSTAbits.RX9 = 0;
+[; ;analogRead.c: 73: 
 [e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
 "74
-[; ;analogRead.c: 74:     RCSTAbits.CREN = 1;
+[; ;analogRead.c: 74: 
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "75
-[; ;analogRead.c: 75:     RCSTAbits.FERR = 0;
+[; ;analogRead.c: 75: 
 [e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
 "76
-[; ;analogRead.c: 76:     RCSTAbits.OERR = 0;
+[; ;analogRead.c: 76:     ADCON0bits.CHS = 0b00010;
 [e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
 "77
-[; ;analogRead.c: 77:     RCSTAbits.SPEN = 1;
+[; ;analogRead.c: 77: 
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "78
-[; ;analogRead.c: 78: }
-[e :UE 274 ]
+[; ;analogRead.c: 78: 
+[e :UE 276 ]
 }
 "80
-[; ;analogRead.c: 80: void uart_send(char* message) {
+[; ;analogRead.c: 80:     ADCON1bits.ADFM = 0x01;
 [v _uart_send `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _uart_send ]
 [v _message `*uc ~T0 @X0 1 r1 ]
 [f ]
 "81
-[; ;analogRead.c: 81:     for (size_t i = 0; i < 12; i++) {
+[; ;analogRead.c: 81: 
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> -> 12 `i `ui 276  ]
-[e $U 277  ]
-[e :U 276 ]
+[e $ < _i / -> # _message `ui -> # *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `ui 278  ]
+[e $U 279  ]
+[e :U 278 ]
 {
 "82
-[; ;analogRead.c: 82:         TXREG = message[i];
+[; ;analogRead.c: 82:     ADCON0bits.ADON = 1;
 [e = _TXREG -> *U + _message * -> _i `ux -> -> # *U _message `ui `ux `uc ]
 "87
-[; ;analogRead.c: 87:         while (TXSTAbits.TRMT == 0);
-[e $U 279  ]
-[e :U 280 ]
-[e :U 279 ]
-[e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 280  ]
+[; ;analogRead.c: 87:         DAC_Value = (AnalogValue >> 5) & 0x1F;
+[e $U 281  ]
+[e :U 282 ]
 [e :U 281 ]
+[e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 282  ]
+[e :U 283 ]
 "88
-[; ;analogRead.c: 88:     }
+[; ;analogRead.c: 88: 
 }
 [e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> -> 12 `i `ui 276  ]
-[e :U 277 ]
+[e $ < _i / -> # _message `ui -> # *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `ui 278  ]
+[e :U 279 ]
 }
 "89
-[; ;analogRead.c: 89: }
-[e :UE 275 ]
+[; ;analogRead.c: 89:         if (AnalogValue > 10 && AnalogValue <= 20) {
+[e :UE 277 ]
+}
+"91
+[; ;analogRead.c: 91:         } else if (AnalogValue > 20 && AnalogValue <= 30) {
+[v _Read_ADC_Value `(ui ~T0 @X0 1 ef ]
+{
+[e :U _Read_ADC_Value ]
+[f ]
+"92
+[; ;analogRead.c: 92:             uart_send("B ");
+[v _ADCValue `ui ~T0 @X0 1 a ]
+"94
+[; ;analogRead.c: 94:             uart_send("C ");
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"95
+[; ;analogRead.c: 95:         } else if (AnalogValue > 40 && AnalogValue <= 50) {
+[e $U 285  ]
+[e :U 286 ]
+[e :U 285 ]
+[e $ != -> . . _ADCON0bits 2 1 `i -> 0 `i 286  ]
+[e :U 287 ]
+"96
+[; ;analogRead.c: 96:             uart_send("D ");
+[e = _ADCValue -> << -> _ADRESH `i -> 8 `i `ui ]
+"97
+[; ;analogRead.c: 97:         } else if (AnalogValue > 50 && AnalogValue <= 60) {
+[e = _ADCValue + _ADCValue -> _ADRESL `ui ]
+"98
+[; ;analogRead.c: 98:             uart_send("E ");
+[e ) _ADCValue ]
+[e $UE 284  ]
+"99
+[; ;analogRead.c: 99:         } else if (AnalogValue > 60 && AnalogValue <= 70) {
+[e :UE 284 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"91
-[; ;analogRead.c: 91: int main(void) {
+"101
+[; ;analogRead.c: 101:         } else if (AnalogValue > 70 && AnalogValue <= 80) {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"93
-[; ;analogRead.c: 93:     OSCCONbits.SPLLEN = 0;
-[e = . . _OSCCONbits 0 7 -> -> 0 `i `uc ]
-"94
-[; ;analogRead.c: 94:     OSCCONbits.IRCF = 0b1011;
-[e = . . _OSCCONbits 1 2 -> -> 11 `i `uc ]
-"95
-[; ;analogRead.c: 95:     OSCCONbits.SCS = 0x02;
-[e = . . _OSCCONbits 1 0 -> -> 2 `i `uc ]
-"97
-[; ;analogRead.c: 97:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"98
-[; ;analogRead.c: 98:     TRISAbits.TRISA2 = 1;
-[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
-"100
-[; ;analogRead.c: 100:     DACCON0bits.DACEN = 0;
-[e = . . _DACCON0bits 0 6 -> -> 0 `i `uc ]
 "102
-[; ;analogRead.c: 102:     ANSELAbits.ANSA2 = 1;
-[e = . . _ANSELAbits 0 2 -> -> 1 `i `uc ]
+[; ;analogRead.c: 102:             uart_send("G ");
+[v _AnalogValue `ui ~T0 @X0 1 a ]
 "104
-[; ;analogRead.c: 104:     ADCON0bits.CHS = 0b00010;
-[e = . . _ADCON0bits 1 2 -> -> 2 `i `uc ]
-"107
-[; ;analogRead.c: 107:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"108
-[; ;analogRead.c: 108:     ADCON1bits.ADCS = 0x00;
-[e = . . _ADCON1bits 1 2 -> -> 0 `i `uc ]
-"109
-[; ;analogRead.c: 109:     ADCON1bits.ADFM = 0x01;
-[e = . . _ADCON1bits 0 6 -> -> 1 `i `uc ]
-"113
-[; ;analogRead.c: 113:     uart_init();
+[; ;analogRead.c: 104:             uart_send("H ");
 [e ( _uart_init ..  ]
+"107
+[; ;analogRead.c: 107:         } else {
+[e = . . _OSCCONbits 0 7 -> -> 0 `i `uc ]
+"108
+[; ;analogRead.c: 108:             uart_send("Z ");
+[e = . . _OSCCONbits 1 2 -> -> 11 `i `uc ]
+"109
+[; ;analogRead.c: 109:         }
+[e = . . _OSCCONbits 1 0 -> -> 2 `i `uc ]
+"111
+[; ;analogRead.c: 111:         if (DAC_Value > 10 && DAC_Value <= 20) {
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+"112
+[; ;analogRead.c: 112:             uart_send("A1 ");
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+"113
+[; ;analogRead.c: 113:         } else if (DAC_Value > 20 && DAC_Value <= 30) {
+[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
 "114
-[; ;analogRead.c: 114:     for (;;) {
-{
-[e :U 283 ]
-{
+[; ;analogRead.c: 114:             uart_send("B1 ");
+[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
+"115
+[; ;analogRead.c: 115:         } else if (DAC_Value > 30 && DAC_Value <= 40) {
+[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
 "116
-[; ;analogRead.c: 116:         ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-"117
-[; ;analogRead.c: 117:         while (ADCON0bits.GO);
-[e $U 286  ]
-[e :U 287 ]
-[e :U 286 ]
-[e $ != -> . . _ADCON0bits 2 1 `i -> 0 `i 287  ]
-[e :U 288 ]
+[; ;analogRead.c: 116:             uart_send("C1 ");
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
 "119
-[; ;analogRead.c: 119:         int ADCValue = ADRESH << 8;
-[v _ADCValue `i ~T0 @X0 1 a ]
-[e = _ADCValue << -> _ADRESH `i -> 8 `i ]
-"120
-[; ;analogRead.c: 120:         ADCValue = ADCValue + ADRESL;
-[e = _ADCValue + _ADCValue -> _ADRESL `i ]
-"121
-[; ;analogRead.c: 121:         TXREG = ADCValue;
-[e = _TXREG -> _ADCValue `uc ]
+[; ;analogRead.c: 119:         } else if (DAC_Value > 50 && DAC_Value <= 60) {
+[e = . . _ANSELAbits 0 2 -> -> 1 `i `uc ]
 "123
-[; ;analogRead.c: 123:         _delay((unsigned long)((200)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"128
-[; ;analogRead.c: 128:         while (TXSTAbits.TRMT == 0);
+[; ;analogRead.c: 123:         } else if (DAC_Value > 70 && DAC_Value <= 80) {
+[e = . . _ADCON0bits 1 2 -> -> 2 `i `uc ]
+"126
+[; ;analogRead.c: 126:             uart_send("H1 ");
+[e = . . _ADCON1bits 1 2 -> -> 1 `i `uc ]
+"127
+[; ;analogRead.c: 127:         } else if (DAC_Value > 90 && DAC_Value <= 100) {
+[e = . . _ADCON1bits 0 6 -> -> 1 `i `uc ]
+"129
+[; ;analogRead.c: 129:         } else {
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"131
+[; ;analogRead.c: 131:         }
+[v _DAC_Value `i ~T0 @X0 1 a ]
+"132
+[; ;analogRead.c: 132: 
+{
+[e :U 289 ]
+{
+"133
+[; ;analogRead.c: 133:         _delay((unsigned long)((100)*(1000000/4000.0)));
+[e = _AnalogValue ( _Read_ADC_Value ..  ]
+"134
+[; ;analogRead.c: 134:     }
+[e = _DAC_Value -> & >> _AnalogValue -> 5 `i -> -> 31 `i `ui `i ]
+"136
+[; ;analogRead.c: 136:     return 0;
+[e $ ! && > _AnalogValue -> -> 10 `i `ui <= _AnalogValue -> -> 20 `i `ui 292  ]
+{
+"137
+[; ;analogRead.c: 137: }
+[e ( _uart_send (1 :s 1C ]
+"138
+}
+[e $U 293  ]
+[e :U 292 ]
+[e $ ! && > _AnalogValue -> -> 20 `i `ui <= _AnalogValue -> -> 30 `i `ui 294  ]
+{
+"139
+[e ( _uart_send (1 :s 2C ]
+"140
+}
+[e $U 295  ]
+[e :U 294 ]
+[e $ ! && > _AnalogValue -> -> 30 `i `ui <= _AnalogValue -> -> 40 `i `ui 296  ]
+{
+"141
+[e ( _uart_send (1 :s 3C ]
+"142
+}
+[e $U 297  ]
+[e :U 296 ]
+[e $ ! && > _AnalogValue -> -> 40 `i `ui <= _AnalogValue -> -> 50 `i `ui 298  ]
+{
+"143
+[e ( _uart_send (1 :s 4C ]
+"144
+}
+[e $U 299  ]
+[e :U 298 ]
+[e $ ! && > _AnalogValue -> -> 50 `i `ui <= _AnalogValue -> -> 60 `i `ui 300  ]
+{
+"145
+[e ( _uart_send (1 :s 5C ]
+"146
+}
+[e $U 301  ]
+[e :U 300 ]
+[e $ ! && > _AnalogValue -> -> 60 `i `ui <= _AnalogValue -> -> 70 `i `ui 302  ]
+{
+"147
+[e ( _uart_send (1 :s 6C ]
+"148
+}
+[e $U 303  ]
+[e :U 302 ]
+[e $ ! && > _AnalogValue -> -> 70 `i `ui <= _AnalogValue -> -> 80 `i `ui 304  ]
+{
+"149
+[e ( _uart_send (1 :s 7C ]
+"150
+}
+[e $U 305  ]
+[e :U 304 ]
+[e $ ! && > _AnalogValue -> -> 80 `i `ui <= _AnalogValue -> -> 90 `i `ui 306  ]
+{
+"151
+[e ( _uart_send (1 :s 8C ]
+"152
+}
+[e $U 307  ]
+[e :U 306 ]
+[e $ ! && > _AnalogValue -> -> 90 `i `ui <= _AnalogValue -> -> 100 `i `ui 308  ]
+{
+"153
+[e ( _uart_send (1 :s 9C ]
+"154
+}
+[e $U 309  ]
+[e :U 308 ]
+{
+"155
+[e ( _uart_send (1 :s 10C ]
+"156
+}
+[e :U 309 ]
+[e :U 307 ]
+[e :U 305 ]
+[e :U 303 ]
+[e :U 301 ]
+[e :U 299 ]
+[e :U 297 ]
+[e :U 295 ]
+[e :U 293 ]
+"158
+[e $ ! && > _DAC_Value -> 10 `i <= _DAC_Value -> 20 `i 310  ]
+{
+"159
+[e ( _uart_send (1 :s 11C ]
+"160
+}
+[e $U 311  ]
+[e :U 310 ]
+[e $ ! && > _DAC_Value -> 20 `i <= _DAC_Value -> 30 `i 312  ]
+{
+"161
+[e ( _uart_send (1 :s 12C ]
+"162
+}
+[e $U 313  ]
+[e :U 312 ]
+[e $ ! && > _DAC_Value -> 30 `i <= _DAC_Value -> 40 `i 314  ]
+{
+"163
+[e ( _uart_send (1 :s 13C ]
+"164
+}
+[e $U 315  ]
+[e :U 314 ]
+[e $ ! && > _DAC_Value -> 40 `i <= _DAC_Value -> 50 `i 316  ]
+{
+"165
+[e ( _uart_send (1 :s 14C ]
+"166
+}
+[e $U 317  ]
+[e :U 316 ]
+[e $ ! && > _DAC_Value -> 50 `i <= _DAC_Value -> 60 `i 318  ]
+{
+"167
+[e ( _uart_send (1 :s 15C ]
+"168
+}
+[e $U 319  ]
+[e :U 318 ]
+[e $ ! && > _DAC_Value -> 60 `i <= _DAC_Value -> 70 `i 320  ]
+{
+"169
+[e ( _uart_send (1 :s 16C ]
+"170
+}
+[e $U 321  ]
+[e :U 320 ]
+[e $ ! && > _DAC_Value -> 70 `i <= _DAC_Value -> 80 `i 322  ]
+{
+"171
+[e ( _uart_send (1 :s 17C ]
+"172
+}
+[e $U 323  ]
+[e :U 322 ]
+[e $ ! && > _DAC_Value -> 80 `i <= _DAC_Value -> 90 `i 324  ]
+{
+"173
+[e ( _uart_send (1 :s 18C ]
+"174
+}
+[e $U 325  ]
+[e :U 324 ]
+[e $ ! && > _DAC_Value -> 90 `i <= _DAC_Value -> 100 `i 326  ]
+{
+"175
+[e ( _uart_send (1 :s 19C ]
+"176
+}
+[e $U 327  ]
+[e :U 326 ]
+{
+"177
+[e ( _uart_send (1 :s 20C ]
+"178
+}
+[e :U 327 ]
+[e :U 325 ]
+[e :U 323 ]
+[e :U 321 ]
+[e :U 319 ]
+[e :U 317 ]
+[e :U 315 ]
+[e :U 313 ]
+[e :U 311 ]
+"180
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"181
+}
 [e $U 289  ]
 [e :U 290 ]
-[e :U 289 ]
-[e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 290  ]
-[e :U 291 ]
-"129
-[; ;analogRead.c: 129:     }
 }
-[e $U 283  ]
-[e :U 284 ]
-}
-"131
-[; ;analogRead.c: 131:     return 0;
+"183
 [e ) -> 0 `i ]
-[e $UE 282  ]
-"132
-[; ;analogRead.c: 132: }
-[e :UE 282 ]
+[e $UE 288  ]
+"184
+[e :UE 288 ]
 }
+[a 10C 90 32 0 ]
+[a 8C 72 32 0 ]
+[a 7C 71 32 0 ]
+[a 9C 71 32 0 ]
+[a 6C 70 32 0 ]
+[a 5C 69 32 0 ]
+[a 4C 68 32 0 ]
+[a 3C 67 32 0 ]
+[a 2C 66 32 0 ]
+[a 1C 65 32 0 ]
+[a 20C 90 49 32 0 ]
+[a 18C 72 49 32 0 ]
+[a 17C 71 49 32 0 ]
+[a 19C 71 49 32 0 ]
+[a 16C 70 49 32 0 ]
+[a 15C 69 49 32 0 ]
+[a 14C 68 49 32 0 ]
+[a 13C 67 49 32 0 ]
+[a 12C 66 49 32 0 ]
+[a 11C 65 49 32 0 ]

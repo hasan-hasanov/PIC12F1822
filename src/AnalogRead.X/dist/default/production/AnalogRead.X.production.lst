@@ -1,731 +1,1736 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Wed Mar 24 22:17:27 2021
+                                                                                               Thu Mar 25 23:59:45 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	12F1822
      2                           	pagewidth 120
      3                           	opt	flic
-     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
-     5                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
-     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
-     7                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
-     8                           	psect	text1,local,class=CODE,merge=1,delta=2
-     9                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
-    10                           	dabs	1,0x7E,2
-    11  0000                     
-    12                           ; Version 2.20
-    13                           ; Generated 12/02/2020 GMT
-    14                           ; 
-    15                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    16                           ; All rights reserved.
-    17                           ; 
-    18                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+     4                           	psect	stringtext1,global,class=STRCODE,delta=2,noexec
+     5                           	psect	stringtext2,global,class=STRCODE,delta=2,noexec
+     6                           	psect	stringtext3,global,class=STRCODE,delta=2,noexec
+     7                           	psect	stringtext4,global,class=STRCODE,delta=2,noexec
+     8                           	psect	stringtext5,global,class=STRCODE,delta=2,noexec
+     9                           	psect	stringtext6,global,class=STRCODE,delta=2,noexec
+    10                           	psect	stringtext7,global,class=STRCODE,delta=2,noexec
+    11                           	psect	stringtext8,global,class=STRCODE,delta=2,noexec
+    12                           	psect	stringtext9,global,class=STRCODE,delta=2,noexec
+    13                           	psect	stringtext10,global,class=STRCODE,delta=2,noexec
+    14                           	psect	stringtext11,global,class=STRCODE,delta=2,noexec
+    15                           	psect	stringtext12,global,class=STRCODE,delta=2,noexec
+    16                           	psect	stringtext13,global,class=STRCODE,delta=2,noexec
+    17                           	psect	stringtext14,global,class=STRCODE,delta=2,noexec
+    18                           	psect	stringtext15,global,class=STRCODE,delta=2,noexec
+    19                           	psect	stringtext16,global,class=STRCODE,delta=2,noexec
+    20                           	psect	stringtext17,global,class=STRCODE,delta=2,noexec
+    21                           	psect	stringtext18,global,class=STRCODE,delta=2,noexec
+    22                           	psect	stringtext19,global,class=STRCODE,delta=2,noexec
+    23                           	psect	cinit,global,class=CODE,merge=1,delta=2
+    24                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    25                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
+    26                           	psect	text1,local,class=CODE,merge=1,delta=2
+    27                           	psect	text2,local,class=CODE,merge=1,delta=2
+    28                           	psect	text3,local,class=CODE,merge=1,delta=2
+    29                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    30                           	dabs	1,0x7E,2
+    31  0000                     
+    32                           ; Version 2.20
+    33                           ; Generated 12/02/2020 GMT
+    34                           ; 
+    35                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    36                           ; All rights reserved.
+    37                           ; 
+    38                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    19                           ; 
-    20                           ; Redistribution and use in source and binary forms, with or without modification, are
-    21                           ; permitted provided that the following conditions are met:
-    22                           ; 
-    23                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
-      +                          t of
-    24                           ;        conditions and the following disclaimer.
-    25                           ; 
-    26                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
-      +                          list
-    27                           ;        of conditions and the following disclaimer in the documentation and/or other
-    28                           ;        materials provided with the distribution.
-    29                           ; 
-    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
-      +                          is
-    31                           ;        software without specific prior written permission.
-    32                           ; 
-    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
-      +                          OR
-    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
-      +                          T,
-    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
-      +                          RICT
-    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
-      +                          SE OF
-    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    41                           ; 
+    39                           ; 
+    40                           ; Redistribution and use in source and binary forms, with or without modification, are
+    41                           ; permitted provided that the following conditions are met:
     42                           ; 
-    43                           ; Code-generator required, PIC12F1822 Definitions
-    44                           ; 
-    45                           ; SFR Addresses
-    46  0000                     	;# 
-    47  0001                     	;# 
-    48  0002                     	;# 
-    49  0003                     	;# 
-    50  0004                     	;# 
-    51  0005                     	;# 
-    52  0006                     	;# 
-    53  0007                     	;# 
-    54  0008                     	;# 
-    55  0009                     	;# 
-    56  000A                     	;# 
-    57  000B                     	;# 
-    58  000C                     	;# 
-    59  0011                     	;# 
-    60  0012                     	;# 
-    61  0015                     	;# 
-    62  0016                     	;# 
-    63  0016                     	;# 
-    64  0017                     	;# 
-    65  0018                     	;# 
-    66  0019                     	;# 
-    67  001A                     	;# 
-    68  001B                     	;# 
-    69  001C                     	;# 
-    70  001E                     	;# 
-    71  001F                     	;# 
-    72  008C                     	;# 
-    73  0091                     	;# 
-    74  0092                     	;# 
-    75  0095                     	;# 
-    76  0096                     	;# 
-    77  0097                     	;# 
-    78  0098                     	;# 
-    79  0099                     	;# 
-    80  009A                     	;# 
-    81  009B                     	;# 
-    82  009B                     	;# 
-    83  009C                     	;# 
-    84  009D                     	;# 
-    85  009E                     	;# 
-    86  010C                     	;# 
-    87  0111                     	;# 
-    88  0112                     	;# 
-    89  0115                     	;# 
-    90  0116                     	;# 
-    91  0117                     	;# 
-    92  0118                     	;# 
-    93  0119                     	;# 
-    94  011A                     	;# 
-    95  011B                     	;# 
-    96  011D                     	;# 
-    97  011D                     	;# 
-    98  018C                     	;# 
-    99  0191                     	;# 
-   100  0191                     	;# 
-   101  0192                     	;# 
-   102  0193                     	;# 
-   103  0193                     	;# 
-   104  0193                     	;# 
-   105  0194                     	;# 
-   106  0195                     	;# 
-   107  0196                     	;# 
-   108  0199                     	;# 
-   109  019A                     	;# 
-   110  019B                     	;# 
-   111  019B                     	;# 
-   112  019B                     	;# 
-   113  019B                     	;# 
-   114  019C                     	;# 
-   115  019C                     	;# 
-   116  019D                     	;# 
-   117  019E                     	;# 
-   118  019F                     	;# 
-   119  020C                     	;# 
-   120  0211                     	;# 
-   121  0211                     	;# 
-   122  0212                     	;# 
-   123  0212                     	;# 
-   124  0213                     	;# 
-   125  0213                     	;# 
-   126  0214                     	;# 
-   127  0214                     	;# 
-   128  0215                     	;# 
-   129  0215                     	;# 
-   130  0215                     	;# 
-   131  0216                     	;# 
-   132  0216                     	;# 
-   133  0217                     	;# 
-   134  0217                     	;# 
-   135  0291                     	;# 
-   136  0291                     	;# 
-   137  0292                     	;# 
-   138  0293                     	;# 
-   139  0294                     	;# 
-   140  0295                     	;# 
-   141  0295                     	;# 
-   142  0296                     	;# 
-   143  0391                     	;# 
-   144  0392                     	;# 
-   145  0393                     	;# 
-   146  039A                     	;# 
-   147  039C                     	;# 
-   148  039D                     	;# 
-   149  039E                     	;# 
-   150  039F                     	;# 
-   151  0FE4                     	;# 
-   152  0FE5                     	;# 
-   153  0FE6                     	;# 
-   154  0FE7                     	;# 
-   155  0FE8                     	;# 
-   156  0FE9                     	;# 
-   157  0FEA                     	;# 
-   158  0FEB                     	;# 
-   159  0FED                     	;# 
-   160  0FEE                     	;# 
-   161  0FEF                     	;# 
-   162  0000                     	;# 
-   163  0001                     	;# 
-   164  0002                     	;# 
-   165  0003                     	;# 
-   166  0004                     	;# 
-   167  0005                     	;# 
-   168  0006                     	;# 
-   169  0007                     	;# 
-   170  0008                     	;# 
-   171  0009                     	;# 
-   172  000A                     	;# 
-   173  000B                     	;# 
-   174  000C                     	;# 
-   175  0011                     	;# 
-   176  0012                     	;# 
-   177  0015                     	;# 
-   178  0016                     	;# 
-   179  0016                     	;# 
-   180  0017                     	;# 
-   181  0018                     	;# 
-   182  0019                     	;# 
-   183  001A                     	;# 
-   184  001B                     	;# 
-   185  001C                     	;# 
-   186  001E                     	;# 
-   187  001F                     	;# 
-   188  008C                     	;# 
-   189  0091                     	;# 
-   190  0092                     	;# 
-   191  0095                     	;# 
-   192  0096                     	;# 
-   193  0097                     	;# 
-   194  0098                     	;# 
-   195  0099                     	;# 
-   196  009A                     	;# 
-   197  009B                     	;# 
-   198  009B                     	;# 
-   199  009C                     	;# 
-   200  009D                     	;# 
-   201  009E                     	;# 
-   202  010C                     	;# 
-   203  0111                     	;# 
-   204  0112                     	;# 
-   205  0115                     	;# 
-   206  0116                     	;# 
-   207  0117                     	;# 
-   208  0118                     	;# 
-   209  0119                     	;# 
-   210  011A                     	;# 
-   211  011B                     	;# 
-   212  011D                     	;# 
-   213  011D                     	;# 
-   214  018C                     	;# 
-   215  0191                     	;# 
-   216  0191                     	;# 
-   217  0192                     	;# 
-   218  0193                     	;# 
-   219  0193                     	;# 
-   220  0193                     	;# 
-   221  0194                     	;# 
-   222  0195                     	;# 
-   223  0196                     	;# 
-   224  0199                     	;# 
-   225  019A                     	;# 
-   226  019B                     	;# 
-   227  019B                     	;# 
-   228  019B                     	;# 
-   229  019B                     	;# 
-   230  019C                     	;# 
-   231  019C                     	;# 
-   232  019D                     	;# 
-   233  019E                     	;# 
-   234  019F                     	;# 
-   235  020C                     	;# 
-   236  0211                     	;# 
-   237  0211                     	;# 
-   238  0212                     	;# 
-   239  0212                     	;# 
-   240  0213                     	;# 
-   241  0213                     	;# 
-   242  0214                     	;# 
-   243  0214                     	;# 
-   244  0215                     	;# 
-   245  0215                     	;# 
-   246  0215                     	;# 
-   247  0216                     	;# 
-   248  0216                     	;# 
-   249  0217                     	;# 
-   250  0217                     	;# 
-   251  0291                     	;# 
-   252  0291                     	;# 
-   253  0292                     	;# 
-   254  0293                     	;# 
-   255  0294                     	;# 
-   256  0295                     	;# 
-   257  0295                     	;# 
-   258  0296                     	;# 
-   259  0391                     	;# 
-   260  0392                     	;# 
-   261  0393                     	;# 
-   262  039A                     	;# 
-   263  039C                     	;# 
-   264  039D                     	;# 
-   265  039E                     	;# 
-   266  039F                     	;# 
-   267  0FE4                     	;# 
-   268  0FE5                     	;# 
-   269  0FE6                     	;# 
-   270  0FE7                     	;# 
-   271  0FE8                     	;# 
-   272  0FE9                     	;# 
-   273  0FEA                     	;# 
-   274  0FEB                     	;# 
-   275  0FED                     	;# 
-   276  0FEE                     	;# 
-   277  0FEF                     	;# 
-   278  009B                     _ADRESL	set	155
-   279  009C                     _ADRESH	set	156
-   280  009E                     _ADCON1bits	set	158
-   281  009D                     _ADCON0bits	set	157
-   282  008C                     _TRISA	set	140
-   283  0099                     _OSCCONbits	set	153
-   284  008C                     _TRISAbits	set	140
-   285  0118                     _DACCON0bits	set	280
-   286  011D                     _APFCONbits	set	285
-   287  018C                     _ANSELAbits	set	396
-   288  019A                     _TXREG	set	410
-   289  019D                     _RCSTAbits	set	413
-   290  019F                     _BAUDCONbits	set	415
-   291  019E                     _TXSTAbits	set	414
-   292  018C                     _ANSELA	set	396
-   293  019B                     _SPBRGL	set	411
-   294  019C                     _SPBRGH	set	412
-   295  020C                     _WPUAbits	set	524
-   296                           
-   297                           	psect	cinit
-   298  07F6                     start_initialization:	
-   299                           ; #config settings
-   300                           
-   301  07F6                     __initialization:
-   302                           
-   303                           ; Clear objects allocated to COMMON
-   304  07F6  01F0               	clrf	__pbssCOMMON& (0+127)
-   305  07F7  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
-   306  07F8  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
-   307  07F9  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
-   308  07FA  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
-   309  07FB  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
-   310  07FC  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
-   311  07FD  01F7               	clrf	(__pbssCOMMON+7)& (0+127)
-   312  07FE                     end_of_initialization:	
-   313                           ;End of C runtime variable initialization code
+    43                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    44                           ;        conditions and the following disclaimer.
+    45                           ; 
+    46                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    47                           ;        of conditions and the following disclaimer in the documentation and/or other
+    48                           ;        materials provided with the distribution.
+    49                           ; 
+    50                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    51                           ;        software without specific prior written permission.
+    52                           ; 
+    53                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    54                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    55                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    56                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    57                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    58                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    59                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    60                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    61                           ; 
+    62                           ; 
+    63                           ; Code-generator required, PIC12F1822 Definitions
+    64                           ; 
+    65                           ; SFR Addresses
+    66  0000                     	;# 
+    67  0001                     	;# 
+    68  0002                     	;# 
+    69  0003                     	;# 
+    70  0004                     	;# 
+    71  0005                     	;# 
+    72  0006                     	;# 
+    73  0007                     	;# 
+    74  0008                     	;# 
+    75  0009                     	;# 
+    76  000A                     	;# 
+    77  000B                     	;# 
+    78  000C                     	;# 
+    79  0011                     	;# 
+    80  0012                     	;# 
+    81  0015                     	;# 
+    82  0016                     	;# 
+    83  0016                     	;# 
+    84  0017                     	;# 
+    85  0018                     	;# 
+    86  0019                     	;# 
+    87  001A                     	;# 
+    88  001B                     	;# 
+    89  001C                     	;# 
+    90  001E                     	;# 
+    91  001F                     	;# 
+    92  008C                     	;# 
+    93  0091                     	;# 
+    94  0092                     	;# 
+    95  0095                     	;# 
+    96  0096                     	;# 
+    97  0097                     	;# 
+    98  0098                     	;# 
+    99  0099                     	;# 
+   100  009A                     	;# 
+   101  009B                     	;# 
+   102  009B                     	;# 
+   103  009C                     	;# 
+   104  009D                     	;# 
+   105  009E                     	;# 
+   106  010C                     	;# 
+   107  0111                     	;# 
+   108  0112                     	;# 
+   109  0115                     	;# 
+   110  0116                     	;# 
+   111  0117                     	;# 
+   112  0118                     	;# 
+   113  0119                     	;# 
+   114  011A                     	;# 
+   115  011B                     	;# 
+   116  011D                     	;# 
+   117  011D                     	;# 
+   118  018C                     	;# 
+   119  0191                     	;# 
+   120  0191                     	;# 
+   121  0192                     	;# 
+   122  0193                     	;# 
+   123  0193                     	;# 
+   124  0193                     	;# 
+   125  0194                     	;# 
+   126  0195                     	;# 
+   127  0196                     	;# 
+   128  0199                     	;# 
+   129  019A                     	;# 
+   130  019B                     	;# 
+   131  019B                     	;# 
+   132  019B                     	;# 
+   133  019B                     	;# 
+   134  019C                     	;# 
+   135  019C                     	;# 
+   136  019D                     	;# 
+   137  019E                     	;# 
+   138  019F                     	;# 
+   139  020C                     	;# 
+   140  0211                     	;# 
+   141  0211                     	;# 
+   142  0212                     	;# 
+   143  0212                     	;# 
+   144  0213                     	;# 
+   145  0213                     	;# 
+   146  0214                     	;# 
+   147  0214                     	;# 
+   148  0215                     	;# 
+   149  0215                     	;# 
+   150  0215                     	;# 
+   151  0216                     	;# 
+   152  0216                     	;# 
+   153  0217                     	;# 
+   154  0217                     	;# 
+   155  0291                     	;# 
+   156  0291                     	;# 
+   157  0292                     	;# 
+   158  0293                     	;# 
+   159  0294                     	;# 
+   160  0295                     	;# 
+   161  0295                     	;# 
+   162  0296                     	;# 
+   163  0391                     	;# 
+   164  0392                     	;# 
+   165  0393                     	;# 
+   166  039A                     	;# 
+   167  039C                     	;# 
+   168  039D                     	;# 
+   169  039E                     	;# 
+   170  039F                     	;# 
+   171  0FE4                     	;# 
+   172  0FE5                     	;# 
+   173  0FE6                     	;# 
+   174  0FE7                     	;# 
+   175  0FE8                     	;# 
+   176  0FE9                     	;# 
+   177  0FEA                     	;# 
+   178  0FEB                     	;# 
+   179  0FED                     	;# 
+   180  0FEE                     	;# 
+   181  0FEF                     	;# 
+   182  0000                     	;# 
+   183  0001                     	;# 
+   184  0002                     	;# 
+   185  0003                     	;# 
+   186  0004                     	;# 
+   187  0005                     	;# 
+   188  0006                     	;# 
+   189  0007                     	;# 
+   190  0008                     	;# 
+   191  0009                     	;# 
+   192  000A                     	;# 
+   193  000B                     	;# 
+   194  000C                     	;# 
+   195  0011                     	;# 
+   196  0012                     	;# 
+   197  0015                     	;# 
+   198  0016                     	;# 
+   199  0016                     	;# 
+   200  0017                     	;# 
+   201  0018                     	;# 
+   202  0019                     	;# 
+   203  001A                     	;# 
+   204  001B                     	;# 
+   205  001C                     	;# 
+   206  001E                     	;# 
+   207  001F                     	;# 
+   208  008C                     	;# 
+   209  0091                     	;# 
+   210  0092                     	;# 
+   211  0095                     	;# 
+   212  0096                     	;# 
+   213  0097                     	;# 
+   214  0098                     	;# 
+   215  0099                     	;# 
+   216  009A                     	;# 
+   217  009B                     	;# 
+   218  009B                     	;# 
+   219  009C                     	;# 
+   220  009D                     	;# 
+   221  009E                     	;# 
+   222  010C                     	;# 
+   223  0111                     	;# 
+   224  0112                     	;# 
+   225  0115                     	;# 
+   226  0116                     	;# 
+   227  0117                     	;# 
+   228  0118                     	;# 
+   229  0119                     	;# 
+   230  011A                     	;# 
+   231  011B                     	;# 
+   232  011D                     	;# 
+   233  011D                     	;# 
+   234  018C                     	;# 
+   235  0191                     	;# 
+   236  0191                     	;# 
+   237  0192                     	;# 
+   238  0193                     	;# 
+   239  0193                     	;# 
+   240  0193                     	;# 
+   241  0194                     	;# 
+   242  0195                     	;# 
+   243  0196                     	;# 
+   244  0199                     	;# 
+   245  019A                     	;# 
+   246  019B                     	;# 
+   247  019B                     	;# 
+   248  019B                     	;# 
+   249  019B                     	;# 
+   250  019C                     	;# 
+   251  019C                     	;# 
+   252  019D                     	;# 
+   253  019E                     	;# 
+   254  019F                     	;# 
+   255  020C                     	;# 
+   256  0211                     	;# 
+   257  0211                     	;# 
+   258  0212                     	;# 
+   259  0212                     	;# 
+   260  0213                     	;# 
+   261  0213                     	;# 
+   262  0214                     	;# 
+   263  0214                     	;# 
+   264  0215                     	;# 
+   265  0215                     	;# 
+   266  0215                     	;# 
+   267  0216                     	;# 
+   268  0216                     	;# 
+   269  0217                     	;# 
+   270  0217                     	;# 
+   271  0291                     	;# 
+   272  0291                     	;# 
+   273  0292                     	;# 
+   274  0293                     	;# 
+   275  0294                     	;# 
+   276  0295                     	;# 
+   277  0295                     	;# 
+   278  0296                     	;# 
+   279  0391                     	;# 
+   280  0392                     	;# 
+   281  0393                     	;# 
+   282  039A                     	;# 
+   283  039C                     	;# 
+   284  039D                     	;# 
+   285  039E                     	;# 
+   286  039F                     	;# 
+   287  0FE4                     	;# 
+   288  0FE5                     	;# 
+   289  0FE6                     	;# 
+   290  0FE7                     	;# 
+   291  0FE8                     	;# 
+   292  0FE9                     	;# 
+   293  0FEA                     	;# 
+   294  0FEB                     	;# 
+   295  0FED                     	;# 
+   296  0FEE                     	;# 
+   297  0FEF                     	;# 
+   298  009E                     _ADCON1bits	set	158
+   299  0099                     _OSCCONbits	set	153
+   300  009B                     _ADRESL	set	155
+   301  009C                     _ADRESH	set	156
+   302  009D                     _ADCON0bits	set	157
+   303  008C                     _TRISAbits	set	140
+   304  011D                     _APFCONbits	set	285
+   305  018C                     _ANSELAbits	set	396
+   306  019A                     _TXREG	set	410
+   307  019D                     _RCSTAbits	set	413
+   308  019F                     _BAUDCONbits	set	415
+   309  019E                     _TXSTAbits	set	414
+   310  018C                     _ANSELA	set	396
+   311  019B                     _SPBRGL	set	411
+   312  019C                     _SPBRGH	set	412
+   313  020C                     _WPUAbits	set	524
    314                           
-   315  07FE                     __end_of__initialization:
-   316  07FE  0020               	movlb	0
-   317  07FF  2FAD               	ljmp	_main	;jump to C main() function
-   318                           
-   319                           	psect	bssCOMMON
-   320  0070                     __pbssCOMMON:
-   321  0070                     _print_buffer:
-   322  0070                     	ds	8
-   323                           
-   324                           	psect	cstackCOMMON
-   325  0078                     __pcstackCOMMON:
-   326  0078                     ?_uart_init:
-   327  0078                     ??_uart_init:	
-   328                           ; 1 bytes @ 0x0
-   329                           
-   330  0078                     ??_main:	
-   331                           ; 1 bytes @ 0x0
-   332                           
-   333  0078                     ?_main:	
-   334                           ; 1 bytes @ 0x0
-   335                           
-   336                           
-   337                           ; 2 bytes @ 0x0
-   338  0078                     	ds	3
-   339  007B                     main@ADCValue:
-   340                           
-   341                           ; 2 bytes @ 0x3
-   342  007B                     	ds	2
-   343                           
-   344                           	psect	maintext
-   345  07AD                     __pmaintext:	
-   346 ;;
-   347 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
-   348 ;;
-   349 ;; *************** function _main *****************
-   350 ;; Defined at:
-   351 ;;		line 91 in file "analogRead.c"
-   352 ;; Parameters:    Size  Location     Type
-   353 ;;		None
-   354 ;; Auto vars:     Size  Location     Type
-   355 ;;  ADCValue        2    3[COMMON] int 
-   356 ;; Return value:  Size  Location     Type
-   357 ;;                  2   55[None  ] int 
-   358 ;; Registers used:
-   359 ;;		wreg, status,2, status,0, pclath, cstack
-   360 ;; Tracked objects:
-   361 ;;		On entry : B1F/0
-   362 ;;		On exit  : 0/0
-   363 ;;		Unchanged: 0/0
-   364 ;; Data sizes:     COMMON   BANK0   BANK1
-   365 ;;      Params:         0       0       0
-   366 ;;      Locals:         2       0       0
-   367 ;;      Temps:          3       0       0
-   368 ;;      Totals:         5       0       0
-   369 ;;Total ram usage:        5 bytes
-   370 ;; Hardware stack levels required when called: 1
-   371 ;; This function calls:
-   372 ;;		_uart_init
-   373 ;; This function is called by:
-   374 ;;		Startup code after reset
-   375 ;; This function uses a non-reentrant model
-   376 ;;
-   377                           
+   315                           	psect	stringtext1
+   316  0535                     __pstringtext1:
+   317  0535                     STR_11:
+   318  0535  3441               	retlw	65	;'A'
+   319  0536  3431               	retlw	49	;'1'
+   320  0537  3420               	retlw	32	;' '
+   321  0538  3400               	retlw	0
+   322                           
+   323                           	psect	stringtext2
+   324  0531                     __pstringtext2:
+   325  0531                     STR_12:
+   326  0531  3442               	retlw	66	;'B'
+   327  0532  3431               	retlw	49	;'1'
+   328  0533  3420               	retlw	32	;' '
+   329  0534  3400               	retlw	0
+   330                           
+   331                           	psect	stringtext3
+   332  052D                     __pstringtext3:
+   333  052D                     STR_13:
+   334  052D  3443               	retlw	67	;'C'
+   335  052E  3431               	retlw	49	;'1'
+   336  052F  3420               	retlw	32	;' '
+   337  0530  3400               	retlw	0
+   338                           
+   339                           	psect	stringtext4
+   340  0529                     __pstringtext4:
+   341  0529                     STR_14:
+   342  0529  3444               	retlw	68	;'D'
+   343  052A  3431               	retlw	49	;'1'
+   344  052B  3420               	retlw	32	;' '
+   345  052C  3400               	retlw	0
+   346                           
+   347                           	psect	stringtext5
+   348  0525                     __pstringtext5:
+   349  0525                     STR_15:
+   350  0525  3445               	retlw	69	;'E'
+   351  0526  3431               	retlw	49	;'1'
+   352  0527  3420               	retlw	32	;' '
+   353  0528  3400               	retlw	0
+   354                           
+   355                           	psect	stringtext6
+   356  0521                     __pstringtext6:
+   357  0521                     STR_16:
+   358  0521  3446               	retlw	70	;'F'
+   359  0522  3431               	retlw	49	;'1'
+   360  0523  3420               	retlw	32	;' '
+   361  0524  3400               	retlw	0
+   362                           
+   363                           	psect	stringtext7
+   364  051D                     __pstringtext7:
+   365  051D                     STR_17:
+   366  051D  3447               	retlw	71	;'G'
+   367  051E  3431               	retlw	49	;'1'
+   368  051F  3420               	retlw	32	;' '
+   369  0520  3400               	retlw	0
+   370                           
+   371                           	psect	stringtext8
+   372  0519                     __pstringtext8:
+   373  0519                     STR_18:
+   374  0519  3448               	retlw	72	;'H'
+   375  051A  3431               	retlw	49	;'1'
+   376  051B  3420               	retlw	32	;' '
+   377  051C  3400               	retlw	0
    378                           
-   379                           ;psect for function _main
-   380  07AD                     _main:
-   381  07AD                     l726:	
-   382                           ;incstack = 0
-   383                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-   384                           
-   385                           
-   386                           ;analogRead.c: 93:     OSCCONbits.SPLLEN = 0;
-   387  07AD  0021               	movlb	1	; select bank1
-   388  07AE  1399               	bcf	25,7	;volatile
-   389  07AF                     l728:
-   390                           
-   391                           ;analogRead.c: 94:     OSCCONbits.IRCF = 0b1011;
-   392  07AF  0819               	movf	25,w	;volatile
-   393  07B0  3987               	andlw	-121
-   394  07B1  3858               	iorlw	88
-   395  07B2  0099               	movwf	25	;volatile
-   396                           
-   397                           ;analogRead.c: 95:     OSCCONbits.SCS = 0x02;
-   398  07B3  0819               	movf	25,w	;volatile
-   399  07B4  39FC               	andlw	-4
-   400  07B5  3802               	iorlw	2
-   401  07B6  0099               	movwf	25	;volatile
-   402  07B7                     l730:
-   403                           
-   404                           ;analogRead.c: 97:     TRISA = 0x00;
-   405  07B7  018C               	clrf	12	;volatile
-   406  07B8                     l732:
+   379                           	psect	stringtext9
+   380  0515                     __pstringtext9:
+   381  0515                     STR_20:
+   382  0515  345A               	retlw	90	;'Z'
+   383  0516  3431               	retlw	49	;'1'
+   384  0517  3420               	retlw	32	;' '
+   385  0518  3400               	retlw	0
+   386                           
+   387                           	psect	stringtext10
+   388  0512                     __pstringtext10:
+   389  0512                     STR_1:
+   390  0512  3441               	retlw	65	;'A'
+   391  0513  3420               	retlw	32	;' '
+   392  0514  3400               	retlw	0
+   393                           
+   394                           	psect	stringtext11
+   395  050F                     __pstringtext11:
+   396  050F                     STR_2:
+   397  050F  3442               	retlw	66	;'B'
+   398  0510  3420               	retlw	32	;' '
+   399  0511  3400               	retlw	0
+   400                           
+   401                           	psect	stringtext12
+   402  050C                     __pstringtext12:
+   403  050C                     STR_3:
+   404  050C  3443               	retlw	67	;'C'
+   405  050D  3420               	retlw	32	;' '
+   406  050E  3400               	retlw	0
    407                           
-   408                           ;analogRead.c: 98:     TRISAbits.TRISA2 = 1;
-   409  07B8  150C               	bsf	12,2	;volatile
-   410  07B9                     l734:
-   411                           
-   412                           ;analogRead.c: 100:     DACCON0bits.DACEN = 0;
-   413  07B9  0022               	movlb	2	; select bank2
-   414  07BA  1398               	bcf	24,7	;volatile
-   415  07BB                     l736:
-   416                           
-   417                           ;analogRead.c: 102:     ANSELAbits.ANSA2 = 1;
-   418  07BB  0023               	movlb	3	; select bank3
-   419  07BC  150C               	bsf	12,2	;volatile
-   420  07BD                     l738:
+   408                           	psect	stringtext13
+   409  0509                     __pstringtext13:
+   410  0509                     STR_4:
+   411  0509  3444               	retlw	68	;'D'
+   412  050A  3420               	retlw	32	;' '
+   413  050B  3400               	retlw	0
+   414                           
+   415                           	psect	stringtext14
+   416  0506                     __pstringtext14:
+   417  0506                     STR_5:
+   418  0506  3445               	retlw	69	;'E'
+   419  0507  3420               	retlw	32	;' '
+   420  0508  3400               	retlw	0
    421                           
-   422                           ;analogRead.c: 104:     ADCON0bits.CHS = 0b00010;
-   423  07BD  0021               	movlb	1	; select bank1
-   424  07BE  081D               	movf	29,w	;volatile
-   425  07BF  3983               	andlw	-125
-   426  07C0  3808               	iorlw	8
-   427  07C1  009D               	movwf	29	;volatile
-   428  07C2                     l740:
-   429                           
-   430                           ;analogRead.c: 107:     ADCON0bits.ADON = 1;
-   431  07C2  141D               	bsf	29,0	;volatile
-   432  07C3                     l742:
-   433                           
-   434                           ;analogRead.c: 108:     ADCON1bits.ADCS = 0x00;
-   435  07C3  308F               	movlw	-113
-   436  07C4  059E               	andwf	30,f	;volatile
-   437  07C5                     l744:
-   438                           
-   439                           ;analogRead.c: 109:     ADCON1bits.ADFM = 0x01;
-   440  07C5  179E               	bsf	30,7	;volatile
-   441  07C6                     l746:
+   422                           	psect	stringtext15
+   423  0503                     __pstringtext15:
+   424  0503                     STR_6:
+   425  0503  3446               	retlw	70	;'F'
+   426  0504  3420               	retlw	32	;' '
+   427  0505  3400               	retlw	0
+   428                           
+   429                           	psect	stringtext16
+   430  0500                     __pstringtext16:
+   431  0500                     STR_7:
+   432  0500  3447               	retlw	71	;'G'
+   433  0501  3420               	retlw	32	;' '
+   434  0502  3400               	retlw	0
+   435                           
+   436                           	psect	stringtext17
+   437  04FD                     __pstringtext17:
+   438  04FD                     STR_8:
+   439  04FD  3448               	retlw	72	;'H'
+   440  04FE  3420               	retlw	32	;' '
+   441  04FF  3400               	retlw	0
    442                           
-   443                           ;analogRead.c: 113:     uart_init();
-   444  07C6  3187  278F  3187   	fcall	_uart_init
-   445  07C9                     l748:
-   446                           
-   447                           ;analogRead.c: 116:         ADCON0bits.GO = 1;
-   448  07C9  0021               	movlb	1	; select bank1
-   449  07CA  149D               	bsf	29,1	;volatile
-   450  07CB                     l57:	
-   451                           ;analogRead.c: 117:         while (ADCON0bits.GO);
-   452                           
-   453  07CB  189D               	btfsc	29,1	;volatile
-   454  07CC  2FCE               	goto	u31
-   455  07CD  2FCF               	goto	u30
-   456  07CE                     u31:
-   457  07CE  2FCB               	goto	l57
-   458  07CF                     u30:
-   459  07CF                     l750:
+   443                           	psect	stringtext18
+   444  04FA                     __pstringtext18:
+   445  04FA                     STR_10:
+   446  04FA  345A               	retlw	90	;'Z'
+   447  04FB  3420               	retlw	32	;' '
+   448  04FC  3400               	retlw	0
+   449                           
+   450                           	psect	stringtext19
+   451  0000                     __pstringtext19:
+   452  051D                     
+   453                           	psect	cinit
+   454  07FE                     start_initialization:	
+   455                           ; #config settings
+   456                           
+   457  07FE                     __initialization:
+   458  07FE                     end_of_initialization:	
+   459                           ;End of C runtime variable initialization code
    460                           
-   461                           ;analogRead.c: 119:         int ADCValue = ADRESH << 8;
-   462  07CF  081C               	movf	28,w	;volatile
-   463  07D0  00F8               	movwf	??_main
-   464  07D1  01F9               	clrf	??_main+1
-   465  07D2  0878               	movf	??_main,w
-   466  07D3  00F9               	movwf	??_main+1
-   467  07D4  01F8               	clrf	??_main
-   468  07D5  0878               	movf	??_main,w
-   469  07D6  00FB               	movwf	main@ADCValue
-   470  07D7  0879               	movf	??_main+1,w
-   471  07D8  00FC               	movwf	main@ADCValue+1
-   472                           
-   473                           ;analogRead.c: 120:         ADCValue = ADCValue + ADRESL;
-   474  07D9  081B               	movf	27,w	;volatile
-   475  07DA  077B               	addwf	main@ADCValue,w
-   476  07DB  00F8               	movwf	??_main
-   477  07DC  087C               	movf	main@ADCValue+1,w
-   478  07DD  1803               	skipnc
-   479  07DE  0A7C               	incf	main@ADCValue+1,w
-   480  07DF  00F9               	movwf	??_main+1
-   481  07E0  0878               	movf	??_main,w
-   482  07E1  00FB               	movwf	main@ADCValue
-   483  07E2  0879               	movf	??_main+1,w
-   484  07E3  00FC               	movwf	main@ADCValue+1
-   485                           
-   486                           ;analogRead.c: 121:         TXREG = ADCValue;
-   487  07E4  087B               	movf	main@ADCValue,w
-   488  07E5  0023               	movlb	3	; select bank3
-   489  07E6  009A               	movwf	26	;volatile
-   490                           
-   491                           ;analogRead.c: 123:         _delay((unsigned long)((200)*(1000000/4000.0)));
-   492  07E7  3041               	movlw	65
-   493  07E8  00F8               	movwf	??_main
-   494  07E9  30EE               	movlw	238
-   495  07EA                     u57:
-   496  07EA  0B89               	decfsz	9,f
-   497  07EB  2FEA               	goto	u57
-   498  07EC  0BF8               	decfsz	??_main,f
-   499  07ED  2FEA               	goto	u57
-   500  07EE  3200               	nop2
-   501  07EF                     l60:	
-   502                           ;analogRead.c: 128:         while (TXSTAbits.TRMT == 0);
-   503                           
-   504  07EF  0023               	movlb	3	; select bank3
-   505  07F0  1C9E               	btfss	30,1	;volatile
-   506  07F1  2FF3               	goto	u41
-   507  07F2  2FF4               	goto	u40
-   508  07F3                     u41:
-   509  07F3  2FEF               	goto	l60
-   510  07F4                     u40:
-   511  07F4  2FC9               	goto	l748
-   512  07F5  2801               	ljmp	start
-   513  07F6                     __end_of_main:
-   514                           
-   515                           	psect	text1
-   516  078F                     __ptext1:	
-   517 ;; *************** function _uart_init *****************
-   518 ;; Defined at:
-   519 ;;		line 54 in file "analogRead.c"
-   520 ;; Parameters:    Size  Location     Type
-   521 ;;		None
-   522 ;; Auto vars:     Size  Location     Type
-   523 ;;		None
-   524 ;; Return value:  Size  Location     Type
-   525 ;;                  1    wreg      void 
-   526 ;; Registers used:
-   527 ;;		wreg, status,2
-   528 ;; Tracked objects:
-   529 ;;		On entry : 0/0
-   530 ;;		On exit  : 0/0
-   531 ;;		Unchanged: 0/0
-   532 ;; Data sizes:     COMMON   BANK0   BANK1
-   533 ;;      Params:         0       0       0
-   534 ;;      Locals:         0       0       0
-   535 ;;      Temps:          0       0       0
-   536 ;;      Totals:         0       0       0
-   537 ;;Total ram usage:        0 bytes
-   538 ;; Hardware stack levels used: 1
-   539 ;; This function calls:
-   540 ;;		Nothing
-   541 ;; This function is called by:
-   542 ;;		_main
-   543 ;; This function uses a non-reentrant model
-   544 ;;
-   545                           
-   546                           
-   547                           ;psect for function _uart_init
-   548  078F                     _uart_init:
-   549  078F                     l672:	
-   550                           ;incstack = 0
-   551                           ; Regs used in _uart_init: [wreg+status,2]
-   552                           
-   553                           
-   554                           ;analogRead.c: 55:     SPBRGH = 25 >> 8;
-   555  078F  0023               	movlb	3	; select bank3
-   556  0790  019C               	clrf	28	;volatile
-   557  0791                     l674:
-   558                           
-   559                           ;analogRead.c: 56:     SPBRGL = 25 & 0xFF;
-   560  0791  3019               	movlw	25
-   561  0792  009B               	movwf	27	;volatile
-   562  0793                     l676:
-   563                           
-   564                           ;analogRead.c: 57:     APFCONbits.RXDTSEL = 0;
-   565  0793  0022               	movlb	2	; select bank2
-   566  0794  139D               	bcf	29,7	;volatile
-   567  0795                     l678:
-   568                           
-   569                           ;analogRead.c: 58:     APFCONbits.TXCKSEL = 0;
-   570  0795  111D               	bcf	29,2	;volatile
-   571  0796                     l680:
-   572                           
-   573                           ;analogRead.c: 59:     TRISAbits.TRISA0 = 0;
-   574  0796  0021               	movlb	1	; select bank1
-   575  0797  100C               	bcf	12,0	;volatile
-   576  0798                     l682:
-   577                           
-   578                           ;analogRead.c: 60:     TRISAbits.TRISA1 = 1;
-   579  0798  148C               	bsf	12,1	;volatile
-   580  0799                     l684:
-   581                           
-   582                           ;analogRead.c: 61:     ANSELA = 0;
-   583  0799  0023               	movlb	3	; select bank3
-   584  079A  018C               	clrf	12	;volatile
-   585  079B                     l686:
-   586                           
-   587                           ;analogRead.c: 62:     WPUAbits.WPUA0 = 1;
-   588  079B  0024               	movlb	4	; select bank4
-   589  079C  140C               	bsf	12,0	;volatile
-   590  079D                     l688:
-   591                           
-   592                           ;analogRead.c: 63:     WPUAbits.WPUA1 = 1;
-   593  079D  148C               	bsf	12,1	;volatile
-   594  079E                     l690:
-   595                           
-   596                           ;analogRead.c: 64:     TXSTAbits.TX9 = 0;
-   597  079E  0023               	movlb	3	; select bank3
-   598  079F  131E               	bcf	30,6	;volatile
-   599  07A0                     l692:
+   461  07FE                     __end_of__initialization:
+   462  07FE  0020               	movlb	0
+   463  07FF  2D94               	ljmp	_main	;jump to C main() function
+   464                           
+   465                           	psect	cstackCOMMON
+   466  0070                     __pcstackCOMMON:
+   467  0070                     ?_uart_init:
+   468  0070                     ??_uart_init:	
+   469                           ; 1 bytes @ 0x0
+   470                           
+   471  0070                     ?_uart_send:	
+   472                           ; 1 bytes @ 0x0
+   473                           
+   474  0070                     ?_Read_ADC_Value:	
+   475                           ; 1 bytes @ 0x0
+   476                           
+   477  0070                     ?_main:	
+   478                           ; 2 bytes @ 0x0
+   479                           
+   480  0070                     uart_send@message:	
+   481                           ; 2 bytes @ 0x0
+   482                           
+   483                           
+   484                           ; 2 bytes @ 0x0
+   485  0070                     	ds	2
+   486  0072                     ??_uart_send:
+   487  0072                     ??_Read_ADC_Value:	
+   488                           ; 1 bytes @ 0x2
+   489                           
+   490  0072                     uart_send@i:	
+   491                           ; 1 bytes @ 0x2
+   492                           
+   493                           
+   494                           ; 2 bytes @ 0x2
+   495  0072                     	ds	3
+   496  0075                     Read_ADC_Value@ADCValue:
+   497                           
+   498                           ; 2 bytes @ 0x5
+   499  0075                     	ds	2
+   500  0077                     ??_main:
+   501                           
+   502                           ; 1 bytes @ 0x7
+   503  0077                     	ds	2
+   504  0079                     main@DAC_Value:
+   505                           
+   506                           ; 2 bytes @ 0x9
+   507  0079                     	ds	2
+   508  007B                     main@AnalogValue:
+   509                           
+   510                           ; 2 bytes @ 0xB
+   511  007B                     	ds	2
+   512                           
+   513                           	psect	maintext
+   514  0594                     __pmaintext:	
+   515 ;;
+   516 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   517 ;;
+   518 ;; *************** function _main *****************
+   519 ;; Defined at:
+   520 ;;		line 101 in file "analogRead.c"
+   521 ;; Parameters:    Size  Location     Type
+   522 ;;		None
+   523 ;; Auto vars:     Size  Location     Type
+   524 ;;  AnalogValue     2   11[COMMON] unsigned int 
+   525 ;;  DAC_Value       2    9[COMMON] int 
+   526 ;; Return value:  Size  Location     Type
+   527 ;;                  2   55[None  ] int 
+   528 ;; Registers used:
+   529 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   530 ;; Tracked objects:
+   531 ;;		On entry : B1F/0
+   532 ;;		On exit  : 0/0
+   533 ;;		Unchanged: 0/0
+   534 ;; Data sizes:     COMMON   BANK0   BANK1
+   535 ;;      Params:         0       0       0
+   536 ;;      Locals:         4       0       0
+   537 ;;      Temps:          2       0       0
+   538 ;;      Totals:         6       0       0
+   539 ;;Total ram usage:        6 bytes
+   540 ;; Hardware stack levels required when called: 1
+   541 ;; This function calls:
+   542 ;;		_Read_ADC_Value
+   543 ;;		_uart_init
+   544 ;;		_uart_send
+   545 ;; This function is called by:
+   546 ;;		Startup code after reset
+   547 ;; This function uses a non-reentrant model
+   548 ;;
+   549                           
+   550                           
+   551                           ;psect for function _main
+   552  0594                     _main:
+   553  0594                     l924:	
+   554                           ;incstack = 0
+   555                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   556                           
+   557                           
+   558                           ;analogRead.c: 102:             uart_send("G ");;analogRead.c: 104:             uart_sen
+      +                          d("H ");
+   559  0594  3185  2556  3185   	fcall	_uart_init
+   560  0597                     l926:
+   561                           
+   562                           ;analogRead.c: 107:         } else {
+   563  0597  0021               	movlb	1	; select bank1
+   564  0598  1399               	bcf	25,7	;volatile
+   565  0599                     l928:
+   566                           
+   567                           ;analogRead.c: 108:             uart_send("Z ");
+   568  0599  0819               	movf	25,w	;volatile
+   569  059A  3987               	andlw	-121
+   570  059B  3858               	iorlw	88
+   571  059C  0099               	movwf	25	;volatile
+   572  059D                     l930:
+   573                           
+   574                           ;analogRead.c: 109:         }
+   575  059D  0819               	movf	25,w	;volatile
+   576  059E  39FC               	andlw	-4
+   577  059F  3802               	iorlw	2
+   578  05A0  0099               	movwf	25	;volatile
+   579  05A1                     l932:
+   580                           
+   581                           ;analogRead.c: 111:         if (DAC_Value > 10 && DAC_Value <= 20) {
+   582  05A1  100C               	bcf	12,0	;volatile
+   583  05A2                     l934:
+   584                           
+   585                           ;analogRead.c: 112:             uart_send("A1 ");
+   586  05A2  108C               	bcf	12,1	;volatile
+   587  05A3                     l936:
+   588                           
+   589                           ;analogRead.c: 113:         } else if (DAC_Value > 20 && DAC_Value <= 30) {
+   590  05A3  150C               	bsf	12,2	;volatile
+   591  05A4                     l938:
+   592                           
+   593                           ;analogRead.c: 114:             uart_send("B1 ");
+   594  05A4  118C               	bcf	12,3	;volatile
+   595  05A5                     l940:
+   596                           
+   597                           ;analogRead.c: 115:         } else if (DAC_Value > 30 && DAC_Value <= 40) {
+   598  05A5  120C               	bcf	12,4	;volatile
+   599  05A6                     l942:
    600                           
-   601                           ;analogRead.c: 65:     TXSTAbits.TXEN = 1;
-   602  07A0  169E               	bsf	30,5	;volatile
-   603  07A1                     l694:
+   601                           ;analogRead.c: 116:             uart_send("C1 ");
+   602  05A6  128C               	bcf	12,5	;volatile
+   603  05A7                     l944:
    604                           
-   605                           ;analogRead.c: 66:     TXSTAbits.SYNC = 0;
-   606  07A1  121E               	bcf	30,4	;volatile
-   607  07A2                     l696:
-   608                           
-   609                           ;analogRead.c: 67:     TXSTAbits.SENDB = 0;
-   610  07A2  119E               	bcf	30,3	;volatile
-   611  07A3                     l698:
-   612                           
-   613                           ;analogRead.c: 68:     TXSTAbits.BRGH = 1;
-   614  07A3  151E               	bsf	30,2	;volatile
-   615  07A4                     l700:
-   616                           
-   617                           ;analogRead.c: 69:     BAUDCONbits.SCKP = 0;
-   618  07A4  121F               	bcf	31,4	;volatile
-   619  07A5                     l702:
-   620                           
-   621                           ;analogRead.c: 70:     BAUDCONbits.BRG16 = 1;
-   622  07A5  159F               	bsf	31,3	;volatile
-   623  07A6                     l704:
+   605                           ;analogRead.c: 119:         } else if (DAC_Value > 50 && DAC_Value <= 60) {
+   606  05A7  0023               	movlb	3	; select bank3
+   607  05A8  150C               	bsf	12,2	;volatile
+   608  05A9                     l946:
+   609                           
+   610                           ;analogRead.c: 123:         } else if (DAC_Value > 70 && DAC_Value <= 80) {
+   611  05A9  0021               	movlb	1	; select bank1
+   612  05AA  081D               	movf	29,w	;volatile
+   613  05AB  3983               	andlw	-125
+   614  05AC  3808               	iorlw	8
+   615  05AD  009D               	movwf	29	;volatile
+   616  05AE                     l948:
+   617                           
+   618                           ;analogRead.c: 126:             uart_send("H1 ");
+   619  05AE  081E               	movf	30,w	;volatile
+   620  05AF  398F               	andlw	-113
+   621  05B0  3810               	iorlw	16
+   622  05B1  009E               	movwf	30	;volatile
+   623  05B2                     l950:
    624                           
-   625                           ;analogRead.c: 71:     BAUDCONbits.ABDEN = 0;
-   626  07A6  101F               	bcf	31,0	;volatile
-   627  07A7                     l706:
+   625                           ;analogRead.c: 127:         } else if (DAC_Value > 90 && DAC_Value <= 100) {
+   626  05B2  179E               	bsf	30,7	;volatile
+   627  05B3                     l952:
    628                           
-   629                           ;analogRead.c: 73:     RCSTAbits.RX9 = 0;
-   630  07A7  131D               	bcf	29,6	;volatile
-   631  07A8                     l708:
+   629                           ;analogRead.c: 129:         } else {
+   630  05B3  141D               	bsf	29,0	;volatile
+   631  05B4                     l954:
    632                           
-   633                           ;analogRead.c: 74:     RCSTAbits.CREN = 1;
-   634  07A8  161D               	bsf	29,4	;volatile
-   635  07A9                     l710:
-   636                           
-   637                           ;analogRead.c: 75:     RCSTAbits.FERR = 0;
-   638  07A9  111D               	bcf	29,2	;volatile
-   639  07AA                     l712:
+   633                           ;analogRead.c: 133:         _delay((unsigned long)((100)*(1000000/4000.0)));
+   634  05B4  3185  2574  3185   	fcall	_Read_ADC_Value
+   635  05B7  0871               	movf	?_Read_ADC_Value+1,w
+   636  05B8  00FC               	movwf	main@AnalogValue+1
+   637  05B9  0870               	movf	?_Read_ADC_Value,w
+   638  05BA  00FB               	movwf	main@AnalogValue
+   639  05BB                     l956:
    640                           
-   641                           ;analogRead.c: 76:     RCSTAbits.OERR = 0;
-   642  07AA  109D               	bcf	29,1	;volatile
-   643  07AB                     l714:
-   644                           
-   645                           ;analogRead.c: 77:     RCSTAbits.SPEN = 1;
-   646  07AB  179D               	bsf	29,7	;volatile
-   647  07AC                     l43:
-   648  07AC  0008               	return
-   649  07AD                     __end_of_uart_init:
-   650  007E                     btemp	set	126	;btemp
-   651  007E                     wtemp0	set	126
-   652                           
-   653                           	psect	config
-   654                           
-   655                           ;Config register CONFIG1 @ 0x8007
-   656                           ;	Oscillator Selection
-   657                           ;	FOSC = INTOSC, INTOSC oscillator: I/O function on CLKIN pin
-   658                           ;	Watchdog Timer Enable
-   659                           ;	WDTE = OFF, WDT disabled
-   660                           ;	Power-up Timer Enable
-   661                           ;	PWRTE = OFF, PWRT disabled
-   662                           ;	MCLR Pin Function Select
-   663                           ;	MCLRE = OFF, MCLR/VPP pin function is digital input
-   664                           ;	Flash Program Memory Code Protection
-   665                           ;	CP = OFF, Program memory code protection is disabled
-   666                           ;	Data Memory Code Protection
-   667                           ;	CPD = OFF, Data memory code protection is disabled
-   668                           ;	Brown-out Reset Enable
-   669                           ;	BOREN = OFF, Brown-out Reset disabled
-   670                           ;	Clock Out Enable
-   671                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
+   641                           ;analogRead.c: 134:     }
+   642  05BB  087C               	movf	main@AnalogValue+1,w
+   643  05BC  00F8               	movwf	??_main+1
+   644  05BD  087B               	movf	main@AnalogValue,w
+   645  05BE  00F7               	movwf	??_main
+   646  05BF  3005               	movlw	5
+   647  05C0                     u445:
+   648  05C0  36F8               	lsrf	??_main+1,f
+   649  05C1  0CF7               	rrf	??_main,f
+   650  05C2  0B89               	decfsz	9,f
+   651  05C3  2DC0               	goto	u445
+   652  05C4  301F               	movlw	31
+   653  05C5  0577               	andwf	??_main,w
+   654  05C6  00F9               	movwf	main@DAC_Value
+   655  05C7  3000               	movlw	0
+   656  05C8  0578               	andwf	??_main+1,w
+   657  05C9  00FA               	movwf	main@DAC_Value+1
+   658                           
+   659                           ;analogRead.c: 136:     return 0;
+   660  05CA  3000               	movlw	0
+   661  05CB  027C               	subwf	main@AnalogValue+1,w
+   662  05CC  300B               	movlw	11
+   663  05CD  1903               	skipnz
+   664  05CE  027B               	subwf	main@AnalogValue,w
+   665  05CF  1C03               	skipc
+   666  05D0  2DD2               	goto	u451
+   667  05D1  2DD3               	goto	u450
+   668  05D2                     u451:
+   669  05D2  2DE4               	goto	l962
+   670  05D3                     u450:
+   671  05D3                     l958:
+   672  05D3  3000               	movlw	0
+   673  05D4  027C               	subwf	main@AnalogValue+1,w
+   674  05D5  3015               	movlw	21
+   675  05D6  1903               	skipnz
+   676  05D7  027B               	subwf	main@AnalogValue,w
+   677  05D8  1803               	skipnc
+   678  05D9  2DDB               	goto	u461
+   679  05DA  2DDC               	goto	u460
+   680  05DB                     u461:
+   681  05DB  2DE4               	goto	l962
+   682  05DC                     u460:
+   683  05DC                     l960:
+   684                           
+   685                           ;analogRead.c: 137: }
+   686  05DC  3012               	movlw	low (STR_1| (0+32768))
+   687  05DD  00F0               	movwf	uart_send@message
+   688  05DE  3085               	movlw	high (STR_1| (0+32768))
+   689  05DF  00F1               	movwf	uart_send@message+1
+   690  05E0  3185  2539  3185   	fcall	_uart_send
+   691  05E3  2EBB               	goto	l1012
+   692  05E4                     l962:
+   693  05E4  3000               	movlw	0
+   694  05E5  027C               	subwf	main@AnalogValue+1,w
+   695  05E6  3015               	movlw	21
+   696  05E7  1903               	skipnz
+   697  05E8  027B               	subwf	main@AnalogValue,w
+   698  05E9  1C03               	skipc
+   699  05EA  2DEC               	goto	u471
+   700  05EB  2DED               	goto	u470
+   701  05EC                     u471:
+   702  05EC  2DFE               	goto	l968
+   703  05ED                     u470:
+   704  05ED                     l964:
+   705  05ED  3000               	movlw	0
+   706  05EE  027C               	subwf	main@AnalogValue+1,w
+   707  05EF  301F               	movlw	31
+   708  05F0  1903               	skipnz
+   709  05F1  027B               	subwf	main@AnalogValue,w
+   710  05F2  1803               	skipnc
+   711  05F3  2DF5               	goto	u481
+   712  05F4  2DF6               	goto	u480
+   713  05F5                     u481:
+   714  05F5  2DFE               	goto	l968
+   715  05F6                     u480:
+   716  05F6                     l966:
+   717  05F6  300F               	movlw	low (STR_2| (0+32768))
+   718  05F7  00F0               	movwf	uart_send@message
+   719  05F8  3085               	movlw	high (STR_2| (0+32768))
+   720  05F9  00F1               	movwf	uart_send@message+1
+   721  05FA  3185  2539  3185   	fcall	_uart_send
+   722  05FD  2EBB               	goto	l1012
+   723  05FE                     l968:
+   724  05FE  3000               	movlw	0
+   725  05FF  027C               	subwf	main@AnalogValue+1,w
+   726  0600  301F               	movlw	31
+   727  0601  1903               	skipnz
+   728  0602  027B               	subwf	main@AnalogValue,w
+   729  0603  1C03               	skipc
+   730  0604  2E06               	goto	u491
+   731  0605  2E07               	goto	u490
+   732  0606                     u491:
+   733  0606  2E18               	goto	l974
+   734  0607                     u490:
+   735  0607                     l970:
+   736  0607  3000               	movlw	0
+   737  0608  027C               	subwf	main@AnalogValue+1,w
+   738  0609  3029               	movlw	41
+   739  060A  1903               	skipnz
+   740  060B  027B               	subwf	main@AnalogValue,w
+   741  060C  1803               	skipnc
+   742  060D  2E0F               	goto	u501
+   743  060E  2E10               	goto	u500
+   744  060F                     u501:
+   745  060F  2E18               	goto	l974
+   746  0610                     u500:
+   747  0610                     l972:
+   748  0610  300C               	movlw	low (STR_3| (0+32768))
+   749  0611  00F0               	movwf	uart_send@message
+   750  0612  3085               	movlw	high (STR_3| (0+32768))
+   751  0613  00F1               	movwf	uart_send@message+1
+   752  0614  3185  2539  3185   	fcall	_uart_send
+   753  0617  2EBB               	goto	l1012
+   754  0618                     l974:
+   755  0618  3000               	movlw	0
+   756  0619  027C               	subwf	main@AnalogValue+1,w
+   757  061A  3029               	movlw	41
+   758  061B  1903               	skipnz
+   759  061C  027B               	subwf	main@AnalogValue,w
+   760  061D  1C03               	skipc
+   761  061E  2E20               	goto	u511
+   762  061F  2E21               	goto	u510
+   763  0620                     u511:
+   764  0620  2E32               	goto	l980
+   765  0621                     u510:
+   766  0621                     l976:
+   767  0621  3000               	movlw	0
+   768  0622  027C               	subwf	main@AnalogValue+1,w
+   769  0623  3033               	movlw	51
+   770  0624  1903               	skipnz
+   771  0625  027B               	subwf	main@AnalogValue,w
+   772  0626  1803               	skipnc
+   773  0627  2E29               	goto	u521
+   774  0628  2E2A               	goto	u520
+   775  0629                     u521:
+   776  0629  2E32               	goto	l980
+   777  062A                     u520:
+   778  062A                     l978:
+   779  062A  3009               	movlw	low (STR_4| (0+32768))
+   780  062B  00F0               	movwf	uart_send@message
+   781  062C  3085               	movlw	high (STR_4| (0+32768))
+   782  062D  00F1               	movwf	uart_send@message+1
+   783  062E  3185  2539  3185   	fcall	_uart_send
+   784  0631  2EBB               	goto	l1012
+   785  0632                     l980:
+   786  0632  3000               	movlw	0
+   787  0633  027C               	subwf	main@AnalogValue+1,w
+   788  0634  3033               	movlw	51
+   789  0635  1903               	skipnz
+   790  0636  027B               	subwf	main@AnalogValue,w
+   791  0637  1C03               	skipc
+   792  0638  2E3A               	goto	u531
+   793  0639  2E3B               	goto	u530
+   794  063A                     u531:
+   795  063A  2E4C               	goto	l986
+   796  063B                     u530:
+   797  063B                     l982:
+   798  063B  3000               	movlw	0
+   799  063C  027C               	subwf	main@AnalogValue+1,w
+   800  063D  303D               	movlw	61
+   801  063E  1903               	skipnz
+   802  063F  027B               	subwf	main@AnalogValue,w
+   803  0640  1803               	skipnc
+   804  0641  2E43               	goto	u541
+   805  0642  2E44               	goto	u540
+   806  0643                     u541:
+   807  0643  2E4C               	goto	l986
+   808  0644                     u540:
+   809  0644                     l984:
+   810  0644  3006               	movlw	low (STR_5| (0+32768))
+   811  0645  00F0               	movwf	uart_send@message
+   812  0646  3085               	movlw	high (STR_5| (0+32768))
+   813  0647  00F1               	movwf	uart_send@message+1
+   814  0648  3185  2539  3185   	fcall	_uart_send
+   815  064B  2EBB               	goto	l1012
+   816  064C                     l986:
+   817  064C  3000               	movlw	0
+   818  064D  027C               	subwf	main@AnalogValue+1,w
+   819  064E  303D               	movlw	61
+   820  064F  1903               	skipnz
+   821  0650  027B               	subwf	main@AnalogValue,w
+   822  0651  1C03               	skipc
+   823  0652  2E54               	goto	u551
+   824  0653  2E55               	goto	u550
+   825  0654                     u551:
+   826  0654  2E66               	goto	l992
+   827  0655                     u550:
+   828  0655                     l988:
+   829  0655  3000               	movlw	0
+   830  0656  027C               	subwf	main@AnalogValue+1,w
+   831  0657  3047               	movlw	71
+   832  0658  1903               	skipnz
+   833  0659  027B               	subwf	main@AnalogValue,w
+   834  065A  1803               	skipnc
+   835  065B  2E5D               	goto	u561
+   836  065C  2E5E               	goto	u560
+   837  065D                     u561:
+   838  065D  2E66               	goto	l992
+   839  065E                     u560:
+   840  065E                     l990:
+   841  065E  3003               	movlw	low (STR_6| (0+32768))
+   842  065F  00F0               	movwf	uart_send@message
+   843  0660  3085               	movlw	high (STR_6| (0+32768))
+   844  0661  00F1               	movwf	uart_send@message+1
+   845  0662  3185  2539  3185   	fcall	_uart_send
+   846  0665  2EBB               	goto	l1012
+   847  0666                     l992:
+   848  0666  3000               	movlw	0
+   849  0667  027C               	subwf	main@AnalogValue+1,w
+   850  0668  3047               	movlw	71
+   851  0669  1903               	skipnz
+   852  066A  027B               	subwf	main@AnalogValue,w
+   853  066B  1C03               	skipc
+   854  066C  2E6E               	goto	u571
+   855  066D  2E6F               	goto	u570
+   856  066E                     u571:
+   857  066E  2E80               	goto	l998
+   858  066F                     u570:
+   859  066F                     l994:
+   860  066F  3000               	movlw	0
+   861  0670  027C               	subwf	main@AnalogValue+1,w
+   862  0671  3051               	movlw	81
+   863  0672  1903               	skipnz
+   864  0673  027B               	subwf	main@AnalogValue,w
+   865  0674  1803               	skipnc
+   866  0675  2E77               	goto	u581
+   867  0676  2E78               	goto	u580
+   868  0677                     u581:
+   869  0677  2E80               	goto	l998
+   870  0678                     u580:
+   871  0678                     l996:
+   872  0678  3000               	movlw	low (STR_7| (0+32768))
+   873  0679  00F0               	movwf	uart_send@message
+   874  067A  3085               	movlw	high (STR_7| (0+32768))
+   875  067B  00F1               	movwf	uart_send@message+1
+   876  067C  3185  2539  3185   	fcall	_uart_send
+   877  067F  2EBB               	goto	l1012
+   878  0680                     l998:
+   879  0680  3000               	movlw	0
+   880  0681  027C               	subwf	main@AnalogValue+1,w
+   881  0682  3051               	movlw	81
+   882  0683  1903               	skipnz
+   883  0684  027B               	subwf	main@AnalogValue,w
+   884  0685  1C03               	skipc
+   885  0686  2E88               	goto	u591
+   886  0687  2E89               	goto	u590
+   887  0688                     u591:
+   888  0688  2E9A               	goto	l1004
+   889  0689                     u590:
+   890  0689                     l1000:
+   891  0689  3000               	movlw	0
+   892  068A  027C               	subwf	main@AnalogValue+1,w
+   893  068B  305B               	movlw	91
+   894  068C  1903               	skipnz
+   895  068D  027B               	subwf	main@AnalogValue,w
+   896  068E  1803               	skipnc
+   897  068F  2E91               	goto	u601
+   898  0690  2E92               	goto	u600
+   899  0691                     u601:
+   900  0691  2E9A               	goto	l1004
+   901  0692                     u600:
+   902  0692                     l1002:
+   903  0692  30FD               	movlw	low (STR_8| (0+32768))
+   904  0693  00F0               	movwf	uart_send@message
+   905  0694  3084               	movlw	high (STR_8| (0+32768))
+   906  0695  00F1               	movwf	uart_send@message+1
+   907  0696  3185  2539  3185   	fcall	_uart_send
+   908  0699  2EBB               	goto	l1012
+   909  069A                     l1004:
+   910  069A  3000               	movlw	0
+   911  069B  027C               	subwf	main@AnalogValue+1,w
+   912  069C  305B               	movlw	91
+   913  069D  1903               	skipnz
+   914  069E  027B               	subwf	main@AnalogValue,w
+   915  069F  1C03               	skipc
+   916  06A0  2EA2               	goto	u611
+   917  06A1  2EA3               	goto	u610
+   918  06A2                     u611:
+   919  06A2  2EB4               	goto	l1010
+   920  06A3                     u610:
+   921  06A3                     l1006:
+   922  06A3  3000               	movlw	0
+   923  06A4  027C               	subwf	main@AnalogValue+1,w
+   924  06A5  3065               	movlw	101
+   925  06A6  1903               	skipnz
+   926  06A7  027B               	subwf	main@AnalogValue,w
+   927  06A8  1803               	skipnc
+   928  06A9  2EAB               	goto	u621
+   929  06AA  2EAC               	goto	u620
+   930  06AB                     u621:
+   931  06AB  2EB4               	goto	l1010
+   932  06AC                     u620:
+   933  06AC                     l1008:
+   934  06AC  3000               	movlw	low (STR_7| (0+32768))
+   935  06AD  00F0               	movwf	uart_send@message
+   936  06AE  3085               	movlw	high (STR_7| (0+32768))
+   937  06AF  00F1               	movwf	uart_send@message+1
+   938  06B0  3185  2539  3185   	fcall	_uart_send
+   939  06B3  2EBB               	goto	l1012
+   940  06B4                     l1010:
+   941  06B4  30FA               	movlw	low (STR_10| (0+32768))
+   942  06B5  00F0               	movwf	uart_send@message
+   943  06B6  3084               	movlw	high (STR_10| (0+32768))
+   944  06B7  00F1               	movwf	uart_send@message+1
+   945  06B8  3185  2539  3185   	fcall	_uart_send
+   946  06BB                     l1012:
+   947  06BB  087A               	movf	main@DAC_Value+1,w
+   948  06BC  3A80               	xorlw	128
+   949  06BD  00F7               	movwf	??_main
+   950  06BE  3080               	movlw	128
+   951  06BF  0277               	subwf	??_main,w
+   952  06C0  1D03               	skipz
+   953  06C1  2EC4               	goto	u635
+   954  06C2  300B               	movlw	11
+   955  06C3  0279               	subwf	main@DAC_Value,w
+   956  06C4                     u635:
+   957  06C4  1C03               	skipc
+   958  06C5  2EC7               	goto	u631
+   959  06C6  2EC8               	goto	u630
+   960  06C7                     u631:
+   961  06C7  2EDD               	goto	l1018
+   962  06C8                     u630:
+   963  06C8                     l1014:
+   964  06C8  087A               	movf	main@DAC_Value+1,w
+   965  06C9  3A80               	xorlw	128
+   966  06CA  00F7               	movwf	??_main
+   967  06CB  3080               	movlw	128
+   968  06CC  0277               	subwf	??_main,w
+   969  06CD  1D03               	skipz
+   970  06CE  2ED1               	goto	u645
+   971  06CF  3015               	movlw	21
+   972  06D0  0279               	subwf	main@DAC_Value,w
+   973  06D1                     u645:
+   974  06D1  1803               	skipnc
+   975  06D2  2ED4               	goto	u641
+   976  06D3  2ED5               	goto	u640
+   977  06D4                     u641:
+   978  06D4  2EDD               	goto	l1018
+   979  06D5                     u640:
+   980  06D5                     l1016:
+   981  06D5  3035               	movlw	low (STR_11| (0+32768))
+   982  06D6  00F0               	movwf	uart_send@message
+   983  06D7  3085               	movlw	high (STR_11| (0+32768))
+   984  06D8  00F1               	movwf	uart_send@message+1
+   985  06D9  3185  2539  3185   	fcall	_uart_send
+   986  06DC  2FF4               	goto	l1068
+   987  06DD                     l1018:
+   988  06DD  087A               	movf	main@DAC_Value+1,w
+   989  06DE  3A80               	xorlw	128
+   990  06DF  00F7               	movwf	??_main
+   991  06E0  3080               	movlw	128
+   992  06E1  0277               	subwf	??_main,w
+   993  06E2  1D03               	skipz
+   994  06E3  2EE6               	goto	u655
+   995  06E4  3015               	movlw	21
+   996  06E5  0279               	subwf	main@DAC_Value,w
+   997  06E6                     u655:
+   998  06E6  1C03               	skipc
+   999  06E7  2EE9               	goto	u651
+  1000  06E8  2EEA               	goto	u650
+  1001  06E9                     u651:
+  1002  06E9  2EFF               	goto	l1024
+  1003  06EA                     u650:
+  1004  06EA                     l1020:
+  1005  06EA  087A               	movf	main@DAC_Value+1,w
+  1006  06EB  3A80               	xorlw	128
+  1007  06EC  00F7               	movwf	??_main
+  1008  06ED  3080               	movlw	128
+  1009  06EE  0277               	subwf	??_main,w
+  1010  06EF  1D03               	skipz
+  1011  06F0  2EF3               	goto	u665
+  1012  06F1  301F               	movlw	31
+  1013  06F2  0279               	subwf	main@DAC_Value,w
+  1014  06F3                     u665:
+  1015  06F3  1803               	skipnc
+  1016  06F4  2EF6               	goto	u661
+  1017  06F5  2EF7               	goto	u660
+  1018  06F6                     u661:
+  1019  06F6  2EFF               	goto	l1024
+  1020  06F7                     u660:
+  1021  06F7                     l1022:
+  1022  06F7  3031               	movlw	low (STR_12| (0+32768))
+  1023  06F8  00F0               	movwf	uart_send@message
+  1024  06F9  3085               	movlw	high (STR_12| (0+32768))
+  1025  06FA  00F1               	movwf	uart_send@message+1
+  1026  06FB  3185  2539  3185   	fcall	_uart_send
+  1027  06FE  2FF4               	goto	l1068
+  1028  06FF                     l1024:
+  1029  06FF  087A               	movf	main@DAC_Value+1,w
+  1030  0700  3A80               	xorlw	128
+  1031  0701  00F7               	movwf	??_main
+  1032  0702  3080               	movlw	128
+  1033  0703  0277               	subwf	??_main,w
+  1034  0704  1D03               	skipz
+  1035  0705  2F08               	goto	u675
+  1036  0706  301F               	movlw	31
+  1037  0707  0279               	subwf	main@DAC_Value,w
+  1038  0708                     u675:
+  1039  0708  1C03               	skipc
+  1040  0709  2F0B               	goto	u671
+  1041  070A  2F0C               	goto	u670
+  1042  070B                     u671:
+  1043  070B  2F21               	goto	l1030
+  1044  070C                     u670:
+  1045  070C                     l1026:
+  1046  070C  087A               	movf	main@DAC_Value+1,w
+  1047  070D  3A80               	xorlw	128
+  1048  070E  00F7               	movwf	??_main
+  1049  070F  3080               	movlw	128
+  1050  0710  0277               	subwf	??_main,w
+  1051  0711  1D03               	skipz
+  1052  0712  2F15               	goto	u685
+  1053  0713  3029               	movlw	41
+  1054  0714  0279               	subwf	main@DAC_Value,w
+  1055  0715                     u685:
+  1056  0715  1803               	skipnc
+  1057  0716  2F18               	goto	u681
+  1058  0717  2F19               	goto	u680
+  1059  0718                     u681:
+  1060  0718  2F21               	goto	l1030
+  1061  0719                     u680:
+  1062  0719                     l1028:
+  1063  0719  302D               	movlw	low (STR_13| (0+32768))
+  1064  071A  00F0               	movwf	uart_send@message
+  1065  071B  3085               	movlw	high (STR_13| (0+32768))
+  1066  071C  00F1               	movwf	uart_send@message+1
+  1067  071D  3185  2539  3185   	fcall	_uart_send
+  1068  0720  2FF4               	goto	l1068
+  1069  0721                     l1030:
+  1070  0721  087A               	movf	main@DAC_Value+1,w
+  1071  0722  3A80               	xorlw	128
+  1072  0723  00F7               	movwf	??_main
+  1073  0724  3080               	movlw	128
+  1074  0725  0277               	subwf	??_main,w
+  1075  0726  1D03               	skipz
+  1076  0727  2F2A               	goto	u695
+  1077  0728  3029               	movlw	41
+  1078  0729  0279               	subwf	main@DAC_Value,w
+  1079  072A                     u695:
+  1080  072A  1C03               	skipc
+  1081  072B  2F2D               	goto	u691
+  1082  072C  2F2E               	goto	u690
+  1083  072D                     u691:
+  1084  072D  2F43               	goto	l1036
+  1085  072E                     u690:
+  1086  072E                     l1032:
+  1087  072E  087A               	movf	main@DAC_Value+1,w
+  1088  072F  3A80               	xorlw	128
+  1089  0730  00F7               	movwf	??_main
+  1090  0731  3080               	movlw	128
+  1091  0732  0277               	subwf	??_main,w
+  1092  0733  1D03               	skipz
+  1093  0734  2F37               	goto	u705
+  1094  0735  3033               	movlw	51
+  1095  0736  0279               	subwf	main@DAC_Value,w
+  1096  0737                     u705:
+  1097  0737  1803               	skipnc
+  1098  0738  2F3A               	goto	u701
+  1099  0739  2F3B               	goto	u700
+  1100  073A                     u701:
+  1101  073A  2F43               	goto	l1036
+  1102  073B                     u700:
+  1103  073B                     l1034:
+  1104  073B  3029               	movlw	low (STR_14| (0+32768))
+  1105  073C  00F0               	movwf	uart_send@message
+  1106  073D  3085               	movlw	high (STR_14| (0+32768))
+  1107  073E  00F1               	movwf	uart_send@message+1
+  1108  073F  3185  2539  3185   	fcall	_uart_send
+  1109  0742  2FF4               	goto	l1068
+  1110  0743                     l1036:
+  1111  0743  087A               	movf	main@DAC_Value+1,w
+  1112  0744  3A80               	xorlw	128
+  1113  0745  00F7               	movwf	??_main
+  1114  0746  3080               	movlw	128
+  1115  0747  0277               	subwf	??_main,w
+  1116  0748  1D03               	skipz
+  1117  0749  2F4C               	goto	u715
+  1118  074A  3033               	movlw	51
+  1119  074B  0279               	subwf	main@DAC_Value,w
+  1120  074C                     u715:
+  1121  074C  1C03               	skipc
+  1122  074D  2F4F               	goto	u711
+  1123  074E  2F50               	goto	u710
+  1124  074F                     u711:
+  1125  074F  2F65               	goto	l1042
+  1126  0750                     u710:
+  1127  0750                     l1038:
+  1128  0750  087A               	movf	main@DAC_Value+1,w
+  1129  0751  3A80               	xorlw	128
+  1130  0752  00F7               	movwf	??_main
+  1131  0753  3080               	movlw	128
+  1132  0754  0277               	subwf	??_main,w
+  1133  0755  1D03               	skipz
+  1134  0756  2F59               	goto	u725
+  1135  0757  303D               	movlw	61
+  1136  0758  0279               	subwf	main@DAC_Value,w
+  1137  0759                     u725:
+  1138  0759  1803               	skipnc
+  1139  075A  2F5C               	goto	u721
+  1140  075B  2F5D               	goto	u720
+  1141  075C                     u721:
+  1142  075C  2F65               	goto	l1042
+  1143  075D                     u720:
+  1144  075D                     l1040:
+  1145  075D  3025               	movlw	low (STR_15| (0+32768))
+  1146  075E  00F0               	movwf	uart_send@message
+  1147  075F  3085               	movlw	high (STR_15| (0+32768))
+  1148  0760  00F1               	movwf	uart_send@message+1
+  1149  0761  3185  2539  3185   	fcall	_uart_send
+  1150  0764  2FF4               	goto	l1068
+  1151  0765                     l1042:
+  1152  0765  087A               	movf	main@DAC_Value+1,w
+  1153  0766  3A80               	xorlw	128
+  1154  0767  00F7               	movwf	??_main
+  1155  0768  3080               	movlw	128
+  1156  0769  0277               	subwf	??_main,w
+  1157  076A  1D03               	skipz
+  1158  076B  2F6E               	goto	u735
+  1159  076C  303D               	movlw	61
+  1160  076D  0279               	subwf	main@DAC_Value,w
+  1161  076E                     u735:
+  1162  076E  1C03               	skipc
+  1163  076F  2F71               	goto	u731
+  1164  0770  2F72               	goto	u730
+  1165  0771                     u731:
+  1166  0771  2F87               	goto	l1048
+  1167  0772                     u730:
+  1168  0772                     l1044:
+  1169  0772  087A               	movf	main@DAC_Value+1,w
+  1170  0773  3A80               	xorlw	128
+  1171  0774  00F7               	movwf	??_main
+  1172  0775  3080               	movlw	128
+  1173  0776  0277               	subwf	??_main,w
+  1174  0777  1D03               	skipz
+  1175  0778  2F7B               	goto	u745
+  1176  0779  3047               	movlw	71
+  1177  077A  0279               	subwf	main@DAC_Value,w
+  1178  077B                     u745:
+  1179  077B  1803               	skipnc
+  1180  077C  2F7E               	goto	u741
+  1181  077D  2F7F               	goto	u740
+  1182  077E                     u741:
+  1183  077E  2F87               	goto	l1048
+  1184  077F                     u740:
+  1185  077F                     l1046:
+  1186  077F  3021               	movlw	low (STR_16| (0+32768))
+  1187  0780  00F0               	movwf	uart_send@message
+  1188  0781  3085               	movlw	high (STR_16| (0+32768))
+  1189  0782  00F1               	movwf	uart_send@message+1
+  1190  0783  3185  2539  3185   	fcall	_uart_send
+  1191  0786  2FF4               	goto	l1068
+  1192  0787                     l1048:
+  1193  0787  087A               	movf	main@DAC_Value+1,w
+  1194  0788  3A80               	xorlw	128
+  1195  0789  00F7               	movwf	??_main
+  1196  078A  3080               	movlw	128
+  1197  078B  0277               	subwf	??_main,w
+  1198  078C  1D03               	skipz
+  1199  078D  2F90               	goto	u755
+  1200  078E  3047               	movlw	71
+  1201  078F  0279               	subwf	main@DAC_Value,w
+  1202  0790                     u755:
+  1203  0790  1C03               	skipc
+  1204  0791  2F93               	goto	u751
+  1205  0792  2F94               	goto	u750
+  1206  0793                     u751:
+  1207  0793  2FA9               	goto	l1054
+  1208  0794                     u750:
+  1209  0794                     l1050:
+  1210  0794  087A               	movf	main@DAC_Value+1,w
+  1211  0795  3A80               	xorlw	128
+  1212  0796  00F7               	movwf	??_main
+  1213  0797  3080               	movlw	128
+  1214  0798  0277               	subwf	??_main,w
+  1215  0799  1D03               	skipz
+  1216  079A  2F9D               	goto	u765
+  1217  079B  3051               	movlw	81
+  1218  079C  0279               	subwf	main@DAC_Value,w
+  1219  079D                     u765:
+  1220  079D  1803               	skipnc
+  1221  079E  2FA0               	goto	u761
+  1222  079F  2FA1               	goto	u760
+  1223  07A0                     u761:
+  1224  07A0  2FA9               	goto	l1054
+  1225  07A1                     u760:
+  1226  07A1                     l1052:
+  1227  07A1  301D               	movlw	low (STR_17| (0+32768))
+  1228  07A2  00F0               	movwf	uart_send@message
+  1229  07A3  3085               	movlw	high (STR_17| (0+32768))
+  1230  07A4  00F1               	movwf	uart_send@message+1
+  1231  07A5  3185  2539  3185   	fcall	_uart_send
+  1232  07A8  2FF4               	goto	l1068
+  1233  07A9                     l1054:
+  1234  07A9  087A               	movf	main@DAC_Value+1,w
+  1235  07AA  3A80               	xorlw	128
+  1236  07AB  00F7               	movwf	??_main
+  1237  07AC  3080               	movlw	128
+  1238  07AD  0277               	subwf	??_main,w
+  1239  07AE  1D03               	skipz
+  1240  07AF  2FB2               	goto	u775
+  1241  07B0  3051               	movlw	81
+  1242  07B1  0279               	subwf	main@DAC_Value,w
+  1243  07B2                     u775:
+  1244  07B2  1C03               	skipc
+  1245  07B3  2FB5               	goto	u771
+  1246  07B4  2FB6               	goto	u770
+  1247  07B5                     u771:
+  1248  07B5  2FCB               	goto	l1060
+  1249  07B6                     u770:
+  1250  07B6                     l1056:
+  1251  07B6  087A               	movf	main@DAC_Value+1,w
+  1252  07B7  3A80               	xorlw	128
+  1253  07B8  00F7               	movwf	??_main
+  1254  07B9  3080               	movlw	128
+  1255  07BA  0277               	subwf	??_main,w
+  1256  07BB  1D03               	skipz
+  1257  07BC  2FBF               	goto	u785
+  1258  07BD  305B               	movlw	91
+  1259  07BE  0279               	subwf	main@DAC_Value,w
+  1260  07BF                     u785:
+  1261  07BF  1803               	skipnc
+  1262  07C0  2FC2               	goto	u781
+  1263  07C1  2FC3               	goto	u780
+  1264  07C2                     u781:
+  1265  07C2  2FCB               	goto	l1060
+  1266  07C3                     u780:
+  1267  07C3                     l1058:
+  1268  07C3  3019               	movlw	low (STR_18| (0+32768))
+  1269  07C4  00F0               	movwf	uart_send@message
+  1270  07C5  3085               	movlw	high (STR_18| (0+32768))
+  1271  07C6  00F1               	movwf	uart_send@message+1
+  1272  07C7  3185  2539  3185   	fcall	_uart_send
+  1273  07CA  2FF4               	goto	l1068
+  1274  07CB                     l1060:
+  1275  07CB  087A               	movf	main@DAC_Value+1,w
+  1276  07CC  3A80               	xorlw	128
+  1277  07CD  00F7               	movwf	??_main
+  1278  07CE  3080               	movlw	128
+  1279  07CF  0277               	subwf	??_main,w
+  1280  07D0  1D03               	skipz
+  1281  07D1  2FD4               	goto	u795
+  1282  07D2  305B               	movlw	91
+  1283  07D3  0279               	subwf	main@DAC_Value,w
+  1284  07D4                     u795:
+  1285  07D4  1C03               	skipc
+  1286  07D5  2FD7               	goto	u791
+  1287  07D6  2FD8               	goto	u790
+  1288  07D7                     u791:
+  1289  07D7  2FED               	goto	l1066
+  1290  07D8                     u790:
+  1291  07D8                     l1062:
+  1292  07D8  087A               	movf	main@DAC_Value+1,w
+  1293  07D9  3A80               	xorlw	128
+  1294  07DA  00F7               	movwf	??_main
+  1295  07DB  3080               	movlw	128
+  1296  07DC  0277               	subwf	??_main,w
+  1297  07DD  1D03               	skipz
+  1298  07DE  2FE1               	goto	u805
+  1299  07DF  3065               	movlw	101
+  1300  07E0  0279               	subwf	main@DAC_Value,w
+  1301  07E1                     u805:
+  1302  07E1  1803               	skipnc
+  1303  07E2  2FE4               	goto	u801
+  1304  07E3  2FE5               	goto	u800
+  1305  07E4                     u801:
+  1306  07E4  2FED               	goto	l1066
+  1307  07E5                     u800:
+  1308  07E5                     l1064:
+  1309  07E5  301D               	movlw	low (STR_17| (0+32768))
+  1310  07E6  00F0               	movwf	uart_send@message
+  1311  07E7  3085               	movlw	high (STR_17| (0+32768))
+  1312  07E8  00F1               	movwf	uart_send@message+1
+  1313  07E9  3185  2539  3185   	fcall	_uart_send
+  1314  07EC  2FF4               	goto	l1068
+  1315  07ED                     l1066:
+  1316  07ED  3015               	movlw	low (STR_20| (0+32768))
+  1317  07EE  00F0               	movwf	uart_send@message
+  1318  07EF  3085               	movlw	high (STR_20| (0+32768))
+  1319  07F0  00F1               	movwf	uart_send@message+1
+  1320  07F1  3185  2539  3185   	fcall	_uart_send
+  1321  07F4                     l1068:
+  1322  07F4  3021               	movlw	33
+  1323  07F5  00F7               	movwf	??_main
+  1324  07F6  3076               	movlw	118
+  1325  07F7                     u817:
+  1326  07F7  0B89               	decfsz	9,f
+  1327  07F8  2FF7               	goto	u817
+  1328  07F9  0BF7               	decfsz	??_main,f
+  1329  07FA  2FF7               	goto	u817
+  1330  07FB  3200               	nop2
+  1331  07FC  2DB4               	goto	l954
+  1332  07FD  2801               	ljmp	start
+  1333  07FE                     __end_of_main:
+  1334                           
+  1335                           	psect	text1
+  1336  0539                     __ptext1:	
+  1337 ;; *************** function _uart_send *****************
+  1338 ;; Defined at:
+  1339 ;;		line 80 in file "analogRead.c"
+  1340 ;; Parameters:    Size  Location     Type
+  1341 ;;  message         2    0[COMMON] PTR unsigned char 
+  1342 ;;		 -> STR_20(4), STR_19(4), STR_18(4), STR_17(4), 
+  1343 ;;		 -> STR_16(4), STR_15(4), STR_14(4), STR_13(4), 
+  1344 ;;		 -> STR_12(4), STR_11(4), STR_10(3), STR_9(3), 
+  1345 ;;		 -> STR_8(3), STR_7(3), STR_6(3), STR_5(3), 
+  1346 ;;		 -> STR_4(3), STR_3(3), STR_2(3), STR_1(3), 
+  1347 ;; Auto vars:     Size  Location     Type
+  1348 ;;  i               2    2[COMMON] unsigned int 
+  1349 ;; Return value:  Size  Location     Type
+  1350 ;;                  1    wreg      void 
+  1351 ;; Registers used:
+  1352 ;;		wreg, fsr0l, fsr0h, status,2, pclath
+  1353 ;; Tracked objects:
+  1354 ;;		On entry : 0/0
+  1355 ;;		On exit  : 0/0
+  1356 ;;		Unchanged: 0/0
+  1357 ;; Data sizes:     COMMON   BANK0   BANK1
+  1358 ;;      Params:         2       0       0
+  1359 ;;      Locals:         2       0       0
+  1360 ;;      Temps:          0       0       0
+  1361 ;;      Totals:         4       0       0
+  1362 ;;Total ram usage:        4 bytes
+  1363 ;; Hardware stack levels used: 1
+  1364 ;; This function calls:
+  1365 ;;		Nothing
+  1366 ;; This function is called by:
+  1367 ;;		_main
+  1368 ;; This function uses a non-reentrant model
+  1369 ;;
+  1370                           
+  1371                           
+  1372                           ;psect for function _uart_send
+  1373  0539                     _uart_send:
+  1374  0539                     l908:	
+  1375                           ;incstack = 0
+  1376                           ; Regs used in _uart_send: [wreg-fsr0h+status,2+pclath]
+  1377                           
+  1378                           
+  1379                           ;analogRead.c: 81: 
+  1380  0539  01F2               	clrf	uart_send@i
+  1381  053A  01F3               	clrf	uart_send@i+1
+  1382  053B                     l914:
+  1383                           
+  1384                           ;analogRead.c: 82:     ADCON0bits.ADON = 1;
+  1385  053B  0870               	movf	uart_send@message,w
+  1386  053C  0772               	addwf	uart_send@i,w
+  1387  053D  0084               	movwf	4
+  1388  053E  0871               	movf	uart_send@message+1,w
+  1389  053F  3D73               	addwfc	uart_send@i+1,w
+  1390  0540  0085               	movwf	5
+  1391  0541  0800               	movf	0,w	;code access
+  1392  0542  0023               	movlb	3	; select bank3
+  1393  0543  009A               	movwf	26	;volatile
+  1394  0544                     l42:	
+  1395                           ;analogRead.c: 87:         DAC_Value = (AnalogValue >> 5) & 0x1F;
+  1396                           
+  1397  0544  1C9E               	btfss	30,1	;volatile
+  1398  0545  2D47               	goto	u411
+  1399  0546  2D48               	goto	u410
+  1400  0547                     u411:
+  1401  0547  2D44               	goto	l42
+  1402  0548                     u410:
+  1403  0548                     l916:
+  1404                           
+  1405                           ;analogRead.c: 88: 
+  1406  0548  3001               	movlw	1
+  1407  0549  07F2               	addwf	uart_send@i,f
+  1408  054A  3000               	movlw	0
+  1409  054B  3DF3               	addwfc	uart_send@i+1,f
+  1410  054C  3000               	movlw	0
+  1411  054D  0273               	subwf	uart_send@i+1,w
+  1412  054E  3002               	movlw	2
+  1413  054F  1903               	skipnz
+  1414  0550  0272               	subwf	uart_send@i,w
+  1415  0551  1C03               	skipc
+  1416  0552  2D54               	goto	u421
+  1417  0553  2D55               	goto	u420
+  1418  0554                     u421:
+  1419  0554  2D3B               	goto	l914
+  1420  0555                     u420:
+  1421  0555                     l45:
+  1422  0555  0008               	return
+  1423  0556                     __end_of_uart_send:
+  1424                           
+  1425                           	psect	text2
+  1426  0556                     __ptext2:	
+  1427 ;; *************** function _uart_init *****************
+  1428 ;; Defined at:
+  1429 ;;		line 54 in file "analogRead.c"
+  1430 ;; Parameters:    Size  Location     Type
+  1431 ;;		None
+  1432 ;; Auto vars:     Size  Location     Type
+  1433 ;;		None
+  1434 ;; Return value:  Size  Location     Type
+  1435 ;;                  1    wreg      void 
+  1436 ;; Registers used:
+  1437 ;;		wreg, status,2
+  1438 ;; Tracked objects:
+  1439 ;;		On entry : 0/0
+  1440 ;;		On exit  : 0/0
+  1441 ;;		Unchanged: 0/0
+  1442 ;; Data sizes:     COMMON   BANK0   BANK1
+  1443 ;;      Params:         0       0       0
+  1444 ;;      Locals:         0       0       0
+  1445 ;;      Temps:          0       0       0
+  1446 ;;      Totals:         0       0       0
+  1447 ;;Total ram usage:        0 bytes
+  1448 ;; Hardware stack levels used: 1
+  1449 ;; This function calls:
+  1450 ;;		Nothing
+  1451 ;; This function is called by:
+  1452 ;;		_main
+  1453 ;; This function uses a non-reentrant model
+  1454 ;;
+  1455                           
+  1456                           
+  1457                           ;psect for function _uart_init
+  1458  0556                     _uart_init:
+  1459  0556                     l702:	
+  1460                           ;incstack = 0
+  1461                           ; Regs used in _uart_init: [wreg+status,2]
+  1462                           
+  1463                           
+  1464                           ;analogRead.c: 55:     unsigned int AnalogValue;
+  1465  0556  0023               	movlb	3	; select bank3
+  1466  0557  019C               	clrf	28	;volatile
+  1467  0558                     l704:
+  1468                           
+  1469                           ;analogRead.c: 56: 
+  1470  0558  3019               	movlw	25
+  1471  0559  009B               	movwf	27	;volatile
+  1472  055A                     l706:
+  1473                           
+  1474                           ;analogRead.c: 57:     uart_init();
+  1475  055A  0022               	movlb	2	; select bank2
+  1476  055B  139D               	bcf	29,7	;volatile
+  1477  055C                     l708:
+  1478                           
+  1479                           ;analogRead.c: 58: 
+  1480  055C  111D               	bcf	29,2	;volatile
+  1481  055D                     l710:
+  1482                           
+  1483                           ;analogRead.c: 59: 
+  1484  055D  0021               	movlb	1	; select bank1
+  1485  055E  100C               	bcf	12,0	;volatile
+  1486  055F                     l712:
+  1487                           
+  1488                           ;analogRead.c: 60:     OSCCONbits.SPLLEN = 0;
+  1489  055F  148C               	bsf	12,1	;volatile
+  1490  0560                     l714:
+  1491                           
+  1492                           ;analogRead.c: 61:     OSCCONbits.IRCF = 0b1011;
+  1493  0560  0023               	movlb	3	; select bank3
+  1494  0561  018C               	clrf	12	;volatile
+  1495  0562                     l716:
+  1496                           
+  1497                           ;analogRead.c: 62:     OSCCONbits.SCS = 0x02;
+  1498  0562  0024               	movlb	4	; select bank4
+  1499  0563  140C               	bsf	12,0	;volatile
+  1500  0564                     l718:
+  1501                           
+  1502                           ;analogRead.c: 63: 
+  1503  0564  148C               	bsf	12,1	;volatile
+  1504  0565                     l720:
+  1505                           
+  1506                           ;analogRead.c: 64:     TRISAbits.TRISA0 = 0;
+  1507  0565  0023               	movlb	3	; select bank3
+  1508  0566  131E               	bcf	30,6	;volatile
+  1509  0567                     l722:
+  1510                           
+  1511                           ;analogRead.c: 65:     TRISAbits.TRISA1 = 0;
+  1512  0567  169E               	bsf	30,5	;volatile
+  1513  0568                     l724:
+  1514                           
+  1515                           ;analogRead.c: 66:     TRISAbits.TRISA2 = 1;
+  1516  0568  121E               	bcf	30,4	;volatile
+  1517  0569                     l726:
+  1518                           
+  1519                           ;analogRead.c: 67:     TRISAbits.TRISA3 = 0;
+  1520  0569  119E               	bcf	30,3	;volatile
+  1521  056A                     l728:
+  1522                           
+  1523                           ;analogRead.c: 68:     TRISAbits.TRISA4 = 0;
+  1524  056A  151E               	bsf	30,2	;volatile
+  1525  056B                     l730:
+  1526                           
+  1527                           ;analogRead.c: 69:     TRISAbits.TRISA5 = 0;
+  1528  056B  121F               	bcf	31,4	;volatile
+  1529  056C                     l732:
+  1530                           
+  1531                           ;analogRead.c: 70: 
+  1532  056C  159F               	bsf	31,3	;volatile
+  1533  056D                     l734:
+  1534                           
+  1535                           ;analogRead.c: 71: 
+  1536  056D  101F               	bcf	31,0	;volatile
+  1537  056E                     l736:
+  1538                           
+  1539                           ;analogRead.c: 73: 
+  1540  056E  131D               	bcf	29,6	;volatile
+  1541  056F                     l738:
+  1542                           
+  1543                           ;analogRead.c: 74: 
+  1544  056F  161D               	bsf	29,4	;volatile
+  1545  0570                     l740:
+  1546                           
+  1547                           ;analogRead.c: 75: 
+  1548  0570  111D               	bcf	29,2	;volatile
+  1549  0571                     l742:
+  1550                           
+  1551                           ;analogRead.c: 76:     ADCON0bits.CHS = 0b00010;
+  1552  0571  109D               	bcf	29,1	;volatile
+  1553  0572                     l744:
+  1554                           
+  1555                           ;analogRead.c: 77: 
+  1556  0572  179D               	bsf	29,7	;volatile
+  1557  0573                     l37:
+  1558  0573  0008               	return
+  1559  0574                     __end_of_uart_init:
+  1560                           
+  1561                           	psect	text3
+  1562  0574                     __ptext3:	
+  1563 ;; *************** function _Read_ADC_Value *****************
+  1564 ;; Defined at:
+  1565 ;;		line 91 in file "analogRead.c"
+  1566 ;; Parameters:    Size  Location     Type
+  1567 ;;		None
+  1568 ;; Auto vars:     Size  Location     Type
+  1569 ;;  ADCValue        2    5[COMMON] unsigned int 
+  1570 ;; Return value:  Size  Location     Type
+  1571 ;;                  2    0[COMMON] unsigned int 
+  1572 ;; Registers used:
+  1573 ;;		wreg
+  1574 ;; Tracked objects:
+  1575 ;;		On entry : 0/0
+  1576 ;;		On exit  : 0/0
+  1577 ;;		Unchanged: 0/0
+  1578 ;; Data sizes:     COMMON   BANK0   BANK1
+  1579 ;;      Params:         2       0       0
+  1580 ;;      Locals:         2       0       0
+  1581 ;;      Temps:          3       0       0
+  1582 ;;      Totals:         7       0       0
+  1583 ;;Total ram usage:        7 bytes
+  1584 ;; Hardware stack levels used: 1
+  1585 ;; This function calls:
+  1586 ;;		Nothing
+  1587 ;; This function is called by:
+  1588 ;;		_main
+  1589 ;; This function uses a non-reentrant model
+  1590 ;;
+  1591                           
+  1592                           
+  1593                           ;psect for function _Read_ADC_Value
+  1594  0574                     _Read_ADC_Value:
+  1595  0574                     l918:	
+  1596                           ;incstack = 0
+  1597                           ; Regs used in _Read_ADC_Value: [wreg]
+  1598                           
+  1599                           
+  1600                           ;analogRead.c: 92:             uart_send("B ");;analogRead.c: 94:             uart_send(
+      +                          "C ");
+  1601  0574  0021               	movlb	1	; select bank1
+  1602  0575  149D               	bsf	29,1	;volatile
+  1603  0576                     l48:	
+  1604                           ;analogRead.c: 95:         } else if (AnalogValue > 40 && AnalogValue <= 50) {
+  1605                           
+  1606  0576  189D               	btfsc	29,1	;volatile
+  1607  0577  2D79               	goto	u431
+  1608  0578  2D7A               	goto	u430
+  1609  0579                     u431:
+  1610  0579  2D76               	goto	l48
+  1611  057A                     u430:
+  1612  057A                     l920:
+  1613                           
+  1614                           ;analogRead.c: 96:             uart_send("D ");
+  1615  057A  081C               	movf	28,w	;volatile
+  1616  057B  00F2               	movwf	??_Read_ADC_Value
+  1617  057C  01F3               	clrf	??_Read_ADC_Value+1
+  1618  057D  0872               	movf	??_Read_ADC_Value,w
+  1619  057E  00F3               	movwf	??_Read_ADC_Value+1
+  1620  057F  01F2               	clrf	??_Read_ADC_Value
+  1621  0580  0872               	movf	??_Read_ADC_Value,w
+  1622  0581  00F5               	movwf	Read_ADC_Value@ADCValue
+  1623  0582  0873               	movf	??_Read_ADC_Value+1,w
+  1624  0583  00F6               	movwf	Read_ADC_Value@ADCValue+1
+  1625                           
+  1626                           ;analogRead.c: 97:         } else if (AnalogValue > 50 && AnalogValue <= 60) {
+  1627  0584  081B               	movf	27,w	;volatile
+  1628  0585  0775               	addwf	Read_ADC_Value@ADCValue,w
+  1629  0586  00F2               	movwf	??_Read_ADC_Value
+  1630  0587  0876               	movf	Read_ADC_Value@ADCValue+1,w
+  1631  0588  1803               	skipnc
+  1632  0589  0A76               	incf	Read_ADC_Value@ADCValue+1,w
+  1633  058A  00F3               	movwf	??_Read_ADC_Value+1
+  1634  058B  0872               	movf	??_Read_ADC_Value,w
+  1635  058C  00F5               	movwf	Read_ADC_Value@ADCValue
+  1636  058D  0873               	movf	??_Read_ADC_Value+1,w
+  1637  058E  00F6               	movwf	Read_ADC_Value@ADCValue+1
+  1638                           
+  1639                           ;analogRead.c: 98:             uart_send("E ");
+  1640  058F  0876               	movf	Read_ADC_Value@ADCValue+1,w
+  1641  0590  00F1               	movwf	?_Read_ADC_Value+1
+  1642  0591  0875               	movf	Read_ADC_Value@ADCValue,w
+  1643  0592  00F0               	movwf	?_Read_ADC_Value
+  1644  0593                     l51:
+  1645  0593  0008               	return
+  1646  0594                     __end_of_Read_ADC_Value:
+  1647  007E                     btemp	set	126	;btemp
+  1648  007E                     wtemp0	set	126
+  1649                           
+  1650                           	psect	config
+  1651                           
+  1652                           ;Config register CONFIG1 @ 0x8007
+  1653                           ;	Oscillator Selection
+  1654                           ;	FOSC = INTOSC, INTOSC oscillator: I/O function on CLKIN pin
+  1655                           ;	Watchdog Timer Enable
+  1656                           ;	WDTE = OFF, WDT disabled
+  1657                           ;	Power-up Timer Enable
+  1658                           ;	PWRTE = OFF, PWRT disabled
+  1659                           ;	MCLR Pin Function Select
+  1660                           ;	MCLRE = OFF, MCLR/VPP pin function is digital input
+  1661                           ;	Flash Program Memory Code Protection
+  1662                           ;	CP = OFF, Program memory code protection is disabled
+  1663                           ;	Data Memory Code Protection
+  1664                           ;	CPD = OFF, Data memory code protection is disabled
+  1665                           ;	Brown-out Reset Enable
+  1666                           ;	BOREN = OFF, Brown-out Reset disabled
+  1667                           ;	Clock Out Enable
+  1668                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
       +                          pin
-   672                           ;	Internal/External Switchover
-   673                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-   674                           ;	Fail-Safe Clock Monitor Enable
-   675                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-   676  8007                     	org	32775
-   677  8007  09A4               	dw	2468
-   678                           
-   679                           ;Config register CONFIG2 @ 0x8008
-   680                           ;	Flash Memory Self-Write Protection
-   681                           ;	WRT = OFF, Write protection off
-   682                           ;	PLL Enable
-   683                           ;	PLLEN = OFF, 4x PLL disabled
-   684                           ;	Stack Overflow/Underflow Reset Enable
-   685                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
-   686                           ;	Brown-out Reset Voltage Selection
-   687                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
-   688                           ;	Low-Voltage Programming Enable
-   689                           ;	LVP = ON, Low-voltage programming enabled
-   690  8008                     	org	32776
-   691  8008  3EFF               	dw	16127
+  1669                           ;	Internal/External Switchover
+  1670                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1671                           ;	Fail-Safe Clock Monitor Enable
+  1672                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1673  8007                     	org	32775
+  1674  8007  09A4               	dw	2468
+  1675                           
+  1676                           ;Config register CONFIG2 @ 0x8008
+  1677                           ;	Flash Memory Self-Write Protection
+  1678                           ;	WRT = OFF, Write protection off
+  1679                           ;	PLL Enable
+  1680                           ;	PLLEN = OFF, 4x PLL disabled
+  1681                           ;	Stack Overflow/Underflow Reset Enable
+  1682                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
+  1683                           ;	Brown-out Reset Voltage Selection
+  1684                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+  1685                           ;	Low-Voltage Programming Enable
+  1686                           ;	LVP = ON, Low-voltage programming enabled
+  1687  8008                     	org	32776
+  1688  8008  3EFF               	dw	16127
 
 Data Sizes:
-    Strings     0
+    Strings     63
     Constant    0
     Data        0
-    BSS         8
+    BSS         0
     Persistent  32
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMMON           14      5      13
+    COMMON           14     13      13
     BANK0            80      0       0
     BANK1            32      0       0
 
 Pointer List with Targets:
 
-    None.
+    uart_send@message	PTR unsigned char  size(2) Largest target is 4
+		 -> STR_20(CODE[4]), STR_19(CODE[4]), STR_18(CODE[4]), STR_17(CODE[4]), 
+		 -> STR_16(CODE[4]), STR_15(CODE[4]), STR_14(CODE[4]), STR_13(CODE[4]), 
+		 -> STR_12(CODE[4]), STR_11(CODE[4]), STR_10(CODE[3]), STR_9(CODE[3]), 
+		 -> STR_8(CODE[3]), STR_7(CODE[3]), STR_6(CODE[3]), STR_5(CODE[3]), 
+		 -> STR_4(CODE[3]), STR_3(CODE[3]), STR_2(CODE[3]), STR_1(CODE[3]), 
+
 
 Critical Paths under _main in COMMON
 
-    None.
+    _main->_Read_ADC_Value
 
 Critical Paths under _main in BANK0
 
@@ -740,11 +1745,19 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 5     5      0      30
-                                              0 COMMON     5     5      0
+ (0) _main                                                 6     6      0    2472
+                                              7 COMMON     6     6      0
+                     _Read_ADC_Value
                           _uart_init
+                          _uart_send
+ ---------------------------------------------------------------------------------
+ (1) _uart_send                                            4     2      2    1610
+                                              0 COMMON     4     2      2
  ---------------------------------------------------------------------------------
  (1) _uart_init                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _Read_ADC_Value                                       7     5      2      46
+                                              0 COMMON     7     5      2
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
  ---------------------------------------------------------------------------------
@@ -752,7 +1765,9 @@ Call Graph Tables:
  Call Graph Graphs:
 
  _main (ROOT)
+   _Read_ADC_Value
    _uart_init
+   _uart_send
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
@@ -763,7 +1778,7 @@ CODE                 0      0       0       0        0.0%
 BITCOMMON            E      0       0       1        0.0%
 BITSFR0              0      0       0       1        0.0%
 SFR0                 0      0       0       1        0.0%
-COMMON               E      5       D       2       92.9%
+COMMON               E      D       D       2       92.9%
 BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 BITSFR2              0      0       0       3        0.0%
@@ -771,7 +1786,7 @@ SFR2                 0      0       0       3        0.0%
 STACK                0      0       0       3        0.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
-ABS                  0      0       D       4        0.0%
+ABS                  0      0       0       4        0.0%
 BITBANK0            50      0       0       5        0.0%
 BITSFR4              0      0       0       5        0.0%
 SFR4                 0      0       0       5        0.0%
@@ -786,7 +1801,7 @@ BITSFR7              0      0       0       8        0.0%
 SFR7                 0      0       0       8        0.0%
 BITSFR8              0      0       0       9        0.0%
 SFR8                 0      0       0       9        0.0%
-DATA                 0      0       D       9        0.0%
+DATA                 0      0       0       9        0.0%
 BITSFR9              0      0       0      10        0.0%
 SFR9                 0      0       0      10        0.0%
 BITSFR10             0      0       0      11        0.0%
@@ -836,34 +1851,105 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Wed Mar 24 22:17:27 2021
+Symbol Table                                                                                   Thu Mar 25 23:59:45 2021
 
-                     l43 07AC                       l60 07EF                       l57 07CB  
-                     u30 07CF                       u31 07CE                       u40 07F4  
-                     u41 07F3                       u57 07EA                      l700 07A4  
-                    l710 07A9                      l702 07A5                      l712 07AA  
-                    l704 07A6                      l714 07AB                      l706 07A7  
-                    l730 07B7                      l708 07A8                      l740 07C2  
-                    l732 07B8                      l750 07CF                      l742 07C3  
-                    l734 07B9                      l726 07AD                      l680 0796  
-                    l672 078F                      l744 07C5                      l736 07BB  
-                    l728 07AF                      l690 079E                      l682 0798  
-                    l674 0791                      l746 07C6                      l738 07BD  
-                    l692 07A0                      l684 0799                      l676 0793  
-                    l748 07C9                      l694 07A1                      l686 079B  
-                    l678 0795                      l696 07A2                      l688 079D  
-                    l698 07A3                      wreg 0009                     _main 07AD  
-                   btemp 007E                     start 0001                    ?_main 0078  
-                  _TRISA 008C                    _TXREG 019A                    wtemp0 007E  
-        __initialization 07F6             __end_of_main 07F6                   ??_main 0078  
+                     l42 0544                       l51 0593                       l37 0573  
+                     l45 0555                       l48 0576                      l710 055D  
+                    l702 0556                      l720 0565                      l712 055F  
+                    l704 0558                      l730 056B                      l722 0567  
+                    l714 0560                      l706 055A                      l740 0570  
+                    l732 056C                      l724 0568                      l716 0562  
+                    l708 055C                      l742 0571                      l734 056D  
+                    l726 0569                      l718 0564                      l920 057A  
+                    l744 0572                      l736 056E                      l728 056A  
+                    l738 056F                      l914 053B                      l930 059D  
+                    l916 0548                      l908 0539                      l940 05A5  
+                    l932 05A1                      l924 0594                      l918 0574  
+                    l950 05B2                      l942 05A6                      l934 05A2  
+                    l926 0597                      l960 05DC                      l952 05B3  
+                    l944 05A7                      l936 05A3                      l928 0599  
+                    l970 0607                      l962 05E4                      l954 05B4  
+                    l946 05A9                      l938 05A4                      l980 0632  
+                    l972 0610                      l964 05ED                      l956 05BB  
+                    l948 05AE                      l990 065E                      l982 063B  
+                    l974 0618                      l966 05F6                      l958 05D3  
+                    l992 0666                      l984 0644                      l976 0621  
+                    l968 05FE                      l994 066F                      l986 064C  
+                    l978 062A                      l996 0678                      l988 0655  
+                    l998 0680                      u410 0548                      u411 0547  
+                    u420 0555                      u500 0610                      u421 0554  
+                    u501 060F                      u430 057A                      u510 0621  
+                    u431 0579                      u511 0620                      u600 0692  
+                    u520 062A                      u601 0691                      u521 0629  
+                    u610 06A3                      u530 063B                      u450 05D3  
+                    u611 06A2                      u531 063A                      u451 05D2  
+                    u700 073B                      u620 06AC                      u540 0644  
+                    u460 05DC                      u701 073A                      u621 06AB  
+                    u541 0643                      u461 05DB                      u445 05C0  
+                    u710 0750                      u630 06C8                      u550 0655  
+                    u470 05ED                      u711 074F                      u631 06C7  
+                    u551 0654                      u471 05EC                      u800 07E5  
+                    u720 075D                      u640 06D5                      u560 065E  
+                    u480 05F6                      u801 07E4                      u721 075C  
+                    u705 0737                      u641 06D4                      u561 065D  
+                    u481 05F5                      u730 0772                      u650 06EA  
+                    u570 066F                      u490 0607                      u731 0771  
+                    u715 074C                      u651 06E9                      u635 06C4  
+                    u571 066E                      u491 0606                      u740 077F  
+                    u660 06F7                      u580 0678                      u805 07E1  
+                    u741 077E                      u725 0759                      u661 06F6  
+                    u645 06D1                      u581 0677                      u750 0794  
+                    u670 070C                      u590 0689                      u751 0793  
+                    u735 076E                      u671 070B                      u655 06E6  
+                    u591 0688                      u760 07A1                      u680 0719  
+                    u817 07F7                      u761 07A0                      u745 077B  
+                    u681 0718                      u665 06F3                      u770 07B6  
+                    u690 072E                      u771 07B5                      u755 0790  
+                    u691 072D                      u675 0708                      u780 07C3  
+                    u781 07C2                      u765 079D                      u685 0715  
+                    u790 07D8                      u791 07D7                      u775 07B2  
+                    u695 072A                      u785 07BF                      u795 07D4  
+                    wreg 0009          main@AnalogValue 007B                     l1000 0689  
+                   l1010 06B4                     l1002 0692                     l1020 06EA  
+                   l1004 069A                     l1012 06BB                     l1030 0721  
+                   l1022 06F7                     l1014 06C8                     l1006 06A3  
+                   l1040 075D                     l1032 072E                     l1024 06FF  
+                   l1016 06D5                     l1008 06AC                     l1050 0794  
+                   l1042 0765                     l1034 073B                     l1026 070C  
+                   l1018 06DD                     l1060 07CB                     l1052 07A1  
+                   l1044 0772                     l1036 0743                     l1028 0719  
+                   l1062 07D8                     l1054 07A9                     l1046 077F  
+                   l1038 0750                     l1064 07E5                     l1056 07B6  
+                   l1048 0787                     l1066 07ED                     l1058 07C3  
+                   l1068 07F4           _Read_ADC_Value 0574                     STR_1 0512  
+                   STR_2 050F                     STR_3 050C                     STR_4 0509  
+                   STR_5 0506                     STR_6 0503                     STR_7 0500  
+                   STR_8 04FD                     STR_9 0500                     _main 0594  
+                   fsr0h 0005                     indf0 0000                     fsr0l 0004  
+                   btemp 007E                     start 0001                    ?_main 0070  
+                  STR_10 04FA                    STR_11 0535                    STR_20 0515  
+                  STR_12 0531                    STR_13 052D                    STR_14 0529  
+                  STR_15 0525                    STR_16 0521                    STR_17 051D  
+                  STR_18 0519                    STR_19 051D                    _TXREG 019A  
+ __end_of_Read_ADC_Value 0594                    wtemp0 007E          __initialization 07FE  
+           __end_of_main 07FE                   ??_main 0077          ?_Read_ADC_Value 0070  
                  _ADRESH 009C                   _ADRESL 009B                   _ANSELA 018C  
                  _SPBRGH 019C                   _SPBRGL 019B  __end_of__initialization 07FE  
-         __pcstackCOMMON 0078               __pmaintext 07AD       __size_of_uart_init 001E  
-                __ptext1 078F     end_of_initialization 07FE        __end_of_uart_init 07AD  
-              _RCSTAbits 019D                _TRISAbits 008C              _DACCON0bits 0118  
-              _TXSTAbits 019E              _BAUDCONbits 019F      start_initialization 07F6  
-            __pbssCOMMON 0070                ___latbits 0000                _uart_init 078F  
-             _ADCON0bits 009D               _ADCON1bits 009E                 _WPUAbits 020C  
-             _APFCONbits 011D               ?_uart_init 0078               _ANSELAbits 018C  
-          __size_of_main 0049               _OSCCONbits 0099             main@ADCValue 007B  
-            ??_uart_init 0078             _print_buffer 0070  
+         __pcstackCOMMON 0070               __pmaintext 0594       __size_of_uart_init 001E  
+     __size_of_uart_send 001D                  __ptext1 0539                  __ptext2 0556  
+                __ptext3 0574         ??_Read_ADC_Value 0072     end_of_initialization 07FE  
+      __end_of_uart_init 0574        __end_of_uart_send 0556                _RCSTAbits 019D  
+ Read_ADC_Value@ADCValue 0075                _TRISAbits 008C                _TXSTAbits 019E  
+            _BAUDCONbits 019F      start_initialization 07FE                ___latbits 0000  
+       uart_send@message 0070                _uart_init 0556                _uart_send 0539  
+             uart_send@i 0072               _ADCON0bits 009D               _ADCON1bits 009E  
+               _WPUAbits 020C               _APFCONbits 011D               ?_uart_init 0070  
+             ?_uart_send 0070               _ANSELAbits 018C  __size_of_Read_ADC_Value 0020  
+          __size_of_main 026A            main@DAC_Value 0079           __pstringtext10 0512  
+         __pstringtext11 050F           __pstringtext12 050C           __pstringtext13 0509  
+         __pstringtext14 0506           __pstringtext15 0503           __pstringtext16 0500  
+         __pstringtext17 04FD           __pstringtext18 04FA           __pstringtext19 0000  
+             _OSCCONbits 0099              ??_uart_init 0070              ??_uart_send 0072  
+          __pstringtext1 0535            __pstringtext2 0531            __pstringtext3 052D  
+          __pstringtext4 0529            __pstringtext5 0525            __pstringtext6 0521  
+          __pstringtext7 051D            __pstringtext8 0519            __pstringtext9 0515  

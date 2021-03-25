@@ -3354,6 +3354,147 @@ extern __bank0 __bit __timeout;
 # 25 "analogRead.c" 2
 
 
+# 1 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdio.h" 3
+# 1 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 27 "analogRead.c" 2
+
+
 #pragma config FOSC = INTOSC
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -3374,101 +3515,10 @@ extern __bank0 __bit __timeout;
 
 
 
-# 1 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdbool.h" 1 3
-# 46 "analogRead.c" 2
-
-# 1 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdint.h" 3
-# 1 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
 
 
 
 
-typedef short int16_t;
-# 173 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdint.h" 3
-# 1 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "E:\\Program Files\\MPLabX\\pic\\include\\c99\\stdint.h" 2 3
-# 47 "analogRead.c" 2
-
-
-
-
-
-uint8_t print_buffer[8] = {0};
 
 void uart_init() {
     SPBRGH = 25 >> 8;
@@ -3497,7 +3547,7 @@ void uart_init() {
 }
 
 void uart_send(char* message) {
-    for (size_t i = 0; i < 12; i++) {
+    for (size_t i = 0; i < sizeof message / sizeof message[0]; i++) {
         TXREG = message[i];
 
 
@@ -3507,44 +3557,96 @@ void uart_send(char* message) {
     }
 }
 
+unsigned int Read_ADC_Value(void) {
+    unsigned int ADCValue;
+
+    ADCON0bits.GO = 1;
+    while (ADCON0bits.GO);
+    ADCValue = ADRESH << 8;
+    ADCValue = ADCValue + ADRESL;
+    return (ADCValue);
+}
+
 int main(void) {
+    unsigned int AnalogValue;
+
+    uart_init();
+
 
     OSCCONbits.SPLLEN = 0;
     OSCCONbits.IRCF = 0b1011;
     OSCCONbits.SCS = 0x02;
 
-    TRISA = 0x00;
+    TRISAbits.TRISA0 = 0;
+    TRISAbits.TRISA1 = 0;
     TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 0;
+    TRISAbits.TRISA4 = 0;
+    TRISAbits.TRISA5 = 0;
 
-    DACCON0bits.DACEN = 0;
 
     ANSELAbits.ANSA2 = 1;
+
+
 
     ADCON0bits.CHS = 0b00010;
 
 
-    ADCON0bits.ADON = 1;
-    ADCON1bits.ADCS = 0x00;
+    ADCON1bits.ADCS = 0x01;
     ADCON1bits.ADFM = 0x01;
 
+    ADCON0bits.ADON = 1;
 
-
-    uart_init();
+    int DAC_Value;
     for (;;) {
+        AnalogValue = Read_ADC_Value();
+        DAC_Value = (AnalogValue >> 5) & 0x1F;
 
-        ADCON0bits.GO = 1;
-        while (ADCON0bits.GO);
+        if (AnalogValue > 10 && AnalogValue <= 20) {
+            uart_send("A ");
+        } else if (AnalogValue > 20 && AnalogValue <= 30) {
+            uart_send("B ");
+        } else if (AnalogValue > 30 && AnalogValue <= 40) {
+            uart_send("C ");
+        } else if (AnalogValue > 40 && AnalogValue <= 50) {
+            uart_send("D ");
+        } else if (AnalogValue > 50 && AnalogValue <= 60) {
+            uart_send("E ");
+        } else if (AnalogValue > 60 && AnalogValue <= 70) {
+            uart_send("F ");
+        } else if (AnalogValue > 70 && AnalogValue <= 80) {
+            uart_send("G ");
+        } else if (AnalogValue > 80 && AnalogValue <= 90) {
+            uart_send("H ");
+        } else if (AnalogValue > 90 && AnalogValue <= 100) {
+            uart_send("G ");
+        } else {
+            uart_send("Z ");
+        }
 
-        int ADCValue = ADRESH << 8;
-        ADCValue = ADCValue + ADRESL;
-        TXREG = ADCValue;
+        if (DAC_Value > 10 && DAC_Value <= 20) {
+            uart_send("A1 ");
+        } else if (DAC_Value > 20 && DAC_Value <= 30) {
+            uart_send("B1 ");
+        } else if (DAC_Value > 30 && DAC_Value <= 40) {
+            uart_send("C1 ");
+        } else if (DAC_Value > 40 && DAC_Value <= 50) {
+            uart_send("D1 ");
+        } else if (DAC_Value > 50 && DAC_Value <= 60) {
+            uart_send("E1 ");
+        } else if (DAC_Value > 60 && DAC_Value <= 70) {
+            uart_send("F1 ");
+        } else if (DAC_Value > 70 && DAC_Value <= 80) {
+            uart_send("G1 ");
+        } else if (DAC_Value > 80 && DAC_Value <= 90) {
+            uart_send("H1 ");
+        } else if (DAC_Value > 90 && DAC_Value <= 100) {
+            uart_send("G1 ");
+        } else {
+            uart_send("Z1 ");
+        }
 
-        _delay((unsigned long)((200)*(1000000/4000.0)));
-
-
-
-
-        while (TXSTAbits.TRMT == 0);
+        _delay((unsigned long)((100)*(1000000/4000.0)));
     }
 
     return 0;
