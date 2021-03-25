@@ -1,5 +1,5 @@
 //**********************************************************************************
-// Example program showing how to handle interrupts on a PIC12F1822
+// Example program showing how to handle analog read on a PIC12F1822
 //
 // Device: PIC12F1822
 // Demo Board: PICkit 4
@@ -7,24 +7,24 @@
 // IDE: MPLAB X v5.45
 // Created: 09 March 2021
 //
-// This program shows how to implement UART protocol.
+// This program shows how to read analog input and send data to UART protocol.
 // The main idea of UART is to send data via serial connection.
+// I use a cheap chinese soil moisture sensor YL-69 without the digital circuit that came with the sensor.
 // For this example I use PICKIT 4 programmer and CP2102 connector.
-// The idea is to send some data to my PC via serial port.
+// The sensor works like this: if the soil is dry it outputs 5V, if it is moist it outputs less.
+// After I obtain the data from the sensor I send it to my PC using UART protocol.
 // In order to receive the connection I use PuTTY.
 //**********************************************************************************
 //                                   PIC12F1822 Pinout for this example
 //                                   ----------
-//          3.3V Power source -> Vdd |1      8| GND
+//          5V Power source -> Vdd |1      8| GND
 //                               RA5 |2      7| RA0 -> TX
 //                               RA4 |3      6| RA1 -> RX
-//                               RA3 |4      5| RA2 <- Voltage in from the button
+//                               RA3 |4      5| RA2 <- Voltage in from analog sensor
 //                                   ----------
 //**********************************************************************************
 
 #include <xc.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 #pragma config FOSC = INTOSC    // Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
 #pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
@@ -109,30 +109,32 @@ int main(void) {
     OSCCONbits.SCS = 0x02; // Set the SCS bits to select internal oscillator block
 
     TRISAbits.TRISA0 = 0; // RA0 = DAC voltage output
-    TRISAbits.TRISA1 = 0; // RA1 = Analog Voltage In
-    TRISAbits.TRISA2 = 1; // RA2 = PWM Output (CCP1) connected to LED
+    TRISAbits.TRISA1 = 0; // RA1 = nc
+    TRISAbits.TRISA2 = 1; // RA2 = Analog voltage in
     TRISAbits.TRISA3 = 0; // RA3 = nc (MCLR)
     TRISAbits.TRISA4 = 0; // RA4 = nc
     TRISAbits.TRISA5 = 0; // RA5 = nc
 
     // Set up ADC
-    ANSELAbits.ANSA2 = 1; // Select A1 as analog input pin for potentiometer input
+    ANSELAbits.ANSA2 = 1; // Select A2 as analog input pin for analog sensor
     // You will need to set the ANSA bits for each pin you want
     // to use as analog inputs
 
     ADCON0bits.CHS = 0b00010; // This selects which analog input to use for the ADC conversion
-    // for this example we are using A1 as our input
+    // for this example we are using A2 as our input
 
     ADCON1bits.ADCS = 0x01; // select ADC conversion clock select as Fosc/8
     ADCON1bits.ADFM = 0x01; // results are right justified
 
     ADCON0bits.ADON = 1; // ADC is on
 
-    int DAC_Value; // this will be used to set the DAC output register
+    int DAC_Value; // this could be used to set the DAC output register
     for (;;) {
         AnalogValue = Read_ADC_Value(); // Read the analog voltage on pin RA1
         DAC_Value = (AnalogValue >> 5) & 0x1F; // divide ADC value by 32 and mask off lower 5 bits
 
+        // Since this chip is too little to use some of the fancy functions
+        // like sprintf or itoa and ftoa I had to improvise
         if (AnalogValue > 10 && AnalogValue <= 20) {
             uart_send("A ");
         } else if (AnalogValue > 20 && AnalogValue <= 30) {
@@ -155,6 +157,7 @@ int main(void) {
             uart_send("Z ");
         }
 
+        // Same idea as above
         if (DAC_Value > 10 && DAC_Value <= 20) {
             uart_send("A1 ");
         } else if (DAC_Value > 20 && DAC_Value <= 30) {
@@ -177,6 +180,8 @@ int main(void) {
             uart_send("Z1 ");
         }
 
+        // Uncomment if you want to output digital signal based on analog input.
+        // DACCON1bits.DACR = DAC_Value;
         __delay_ms(100); // wait a little bit
     }
 
